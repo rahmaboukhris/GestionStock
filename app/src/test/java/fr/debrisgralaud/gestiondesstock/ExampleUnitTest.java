@@ -1,4 +1,4 @@
-package ovh.debris.gestiondesstock;
+package fr.debrisgralaud.gestiondesstock;
 
 import org.junit.Test;
 

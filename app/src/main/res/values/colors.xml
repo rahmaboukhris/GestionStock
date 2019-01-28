@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Main Color Android -->
-    <color name="colorPrimary">#458FF5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#34A853</color>
-
-    <!-- Graphic Charter for the application -->
-    <color name="colorBlack">#000000</color>
-    <color name="colorFont">#F3F3F3</color>
-    <color name="colorSecondary">#34A853</color>
-    <color name="colorWarning">#FABC05</color>
-    <color name="colorDanger">#EE4335</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 </resources>

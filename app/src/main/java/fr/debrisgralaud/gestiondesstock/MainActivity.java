@@ -1,4 +1,4 @@
-package ovh.debris.gestiondesstock;
+package fr.debrisgralaud.gestiondesstock;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
