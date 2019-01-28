@@ -1,4 +1,4 @@
-package fr.debrisgralaud.gestiondesstock;
+package fr.debrisgrellaud.myapplication;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("fr.debrisgralaud.gestiondesstock", appContext.getPackageName());
+        assertEquals("fr.debrisgrellaud.myapplication", appContext.getPackageName());
     }
 }

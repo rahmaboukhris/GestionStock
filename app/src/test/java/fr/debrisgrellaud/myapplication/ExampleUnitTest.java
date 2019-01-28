@@ -1,4 +1,4 @@
-package fr.debrisgralaud.gestiondesstock;
+package fr.debrisgrellaud.myapplication;
 
 import org.junit.Test;
 

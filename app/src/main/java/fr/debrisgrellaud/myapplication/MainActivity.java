@@ -1,4 +1,4 @@
-package fr.debrisgralaud.gestiondesstock;
+package fr.debrisgrellaud.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
