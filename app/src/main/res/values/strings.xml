@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Gestions des stock</string>
+    <string name="app_name_ajout_lieu">Ajout d\'un lieu</string>
+    <string name="app_name_list_lieu">List des lieu</string>
 </resources>
