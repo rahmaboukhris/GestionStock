@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import fr.debrisgrollaud.gestionsdesstock.lieu.AjoutLieu;
+import fr.debrisgrollaud.gestionsdesstock.lieu.ListLieu;
+
 public class MainActivity extends AppCompatActivity {
 
     public static Intent toAjoutLieuActivity;

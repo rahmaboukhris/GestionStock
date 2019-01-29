@@ -4,25 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ModifierItem">
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_ajoutFournisseur_telephone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true">
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_ajoutFournisseur_telephone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="365dp">
-
-    </android.support.design.widget.TextInputLayout>
+    tools:context=".item.ModifierItem">
 
     <Button
         android:id="@+id/button6"
@@ -55,7 +37,35 @@
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutFournisseur_nom"
+            android:id="@+id/input_modifierItem_fournisseur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fournisseur"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_modifierItem_categorie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Catégorie"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_modifierItem_nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -70,7 +80,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/inpu_ModifierItem"
+            android:id="@+id/input_modifierItem_nombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -83,27 +93,6 @@
                 android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_modifierStockage_categorie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true">
-
-            <android.support.design.widget.TextInputEditText
-                style="tégorie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="E-mail"
-                android:inputType="text" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:inputType="text" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_modifierItem_dateAjout"

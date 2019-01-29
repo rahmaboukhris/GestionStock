@@ -1,7 +1,9 @@
-package fr.debrisgrollaud.gestionsdesstock;
+package fr.debrisgrollaud.gestionsdesstock.stockage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class ModifierStockage extends AppCompatActivity {
 

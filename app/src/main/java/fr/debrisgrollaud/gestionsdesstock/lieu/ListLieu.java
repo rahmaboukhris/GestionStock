@@ -1,4 +1,4 @@
-package fr.debrisgrollaud.gestionsdesstock;
+package fr.debrisgrollaud.gestionsdesstock.lieu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class ListLieu extends AppCompatActivity {
 
