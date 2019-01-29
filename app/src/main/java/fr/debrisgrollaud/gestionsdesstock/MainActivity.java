@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_name);
 
-        Button toAjoutLieuButton = findViewById(R.id.toAjouterLieu);
+        Button toAjoutLieuButton = findViewById(R.id.toAjoutFournisseur);
 
         toAjoutLieuActivity = new Intent(MainActivity.this, AjoutLieu.class);
 

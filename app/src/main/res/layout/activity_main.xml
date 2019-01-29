@@ -6,36 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/toListLieu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary"
-        android:text="Liste des lieux"
-        android:textColor="@color/colorFont"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toAjouterLieu" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:paddingBottom="20dp">
 
-    <Button
-        android:id="@+id/toAjouterLieu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary"
-        android:text="Ajout d'un lieu"
-        android:textColor="@color/colorFont"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/toAjoutFournisseur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Ajouter un fournisseur" />
+
+        <Button
+            android:id="@+id/toAjoutItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Ajouter un item" />
+
+        <Button
+            android:id="@+id/toAjoutLieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Ajouter un lieu" />
+
+        <Button
+            android:id="@+id/toAjoutStockage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Ajouter un stockage" />
+
+        <Button
+            android:id="@+id/toListFournisseur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des fournisseurs" />
+
+        <Button
+            android:id="@+id/toListItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des Items" />
+
+        <Button
+            android:id="@+id/toListLieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des lieux" />
+
+        <Button
+            android:id="@+id/toListPrecommande"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des précommandes" />
+
+        <Button
+            android:id="@+id/toListStockage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des stockages" />
+
+        <Button
+            android:id="@+id/toModifieritem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Modifier un item" />
+
+        <Button
+            android:id="@+id/toModifierStockage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Modifier un stockage" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListLieu"></activity>
+        <activity android:name=".ModifierItem"></activity>
+        <activity android:name=".ModifierStockage" />
+        <activity android:name=".ListStockage" />
+        <activity android:name=".AjoutStockage" />
+        <activity android:name=".ListItem" />
+        <activity android:name=".AjoutItem" />
+        <activity android:name=".ListPrecommande" />
+        <activity android:name=".ListFournisseur" />
+        <activity android:name=".AjoutFournisseur" />
+        <activity android:name=".ListLieu" />
         <activity android:name=".AjoutLieu" />
         <activity android:name=".MainActivity">
             <intent-filter>
