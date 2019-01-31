@@ -11,4 +11,5 @@
     <color name="colorSecondary">#34A853</color>
     <color name="colorWarning">#FABC05</color>
     <color name="colorDanger">#EE4335</color>
+    <color name="transparent">#001C1B20</color>
 </resources>
