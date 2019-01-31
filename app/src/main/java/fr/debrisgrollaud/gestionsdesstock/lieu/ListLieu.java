@@ -22,6 +22,7 @@ public class ListLieu extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.app_name_list_lieu);
 
         String[] values = new String[]{"Device", "Géo localisation"};
         Integer[] image = new Integer[]{R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground};

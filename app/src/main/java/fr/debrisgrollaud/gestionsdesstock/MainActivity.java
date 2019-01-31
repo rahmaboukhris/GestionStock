@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.AjoutFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.ListFournisseur;
@@ -25,9 +26,12 @@ import fr.debrisgrollaud.gestionsdesstock.stockage.ModifierStockage;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static MainActivity Instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Instance = this;
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_name);
 
@@ -60,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Overload if no parmas used
-    private void setActivityOnClick(Button button, Class<?> caller) {
+    private static void setActivityOnClick(Button button, Class<?> caller) {
         setActivityOnClick(button, caller, null);
     }
 
     //Set redirect action on click
-    private void setActivityOnClick(Button button, Class<?> caller, HashMap<String, Object> params) {
-        final Intent activity_toX = new Intent(MainActivity.this, caller);
+    public static void setActivityOnClick(Button button, Class<?> caller, HashMap<String, Object> params) {
+        final Intent activity_toX = new Intent(MainActivity.Instance, caller);
 
         if (params != null) {
             for (Map.Entry<String, Object> param : params.entrySet()) {
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                MainActivity.this.startActivity(activity_toX);
+                MainActivity.Instance.startActivity(activity_toX);
             }
         });
     }

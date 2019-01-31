@@ -21,8 +21,10 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+        <!-- TODO Espacement des lement -->
+
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_ville"
+            android:id="@+id/input_ajoutLieu_ville"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -36,7 +38,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_rue"
+            android:id="@+id/input_ajoutLieu_rue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -45,12 +47,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Rue"
-                android:inputType="text" />
+                android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_nuemro"
+            android:id="@+id/input_ajoutLieu_nuemro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -59,12 +61,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Numéro"
-                android:inputType="text" />
+                android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_postal"
+            android:id="@+id/input_ajoutLieu_postal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -73,14 +75,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Code Postal"
-                android:inputType="text" />
+                android:inputType="number"
+                android:maxLength="5"/>
 
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_ajout_lieux"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
