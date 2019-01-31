@@ -30,7 +30,7 @@ public class ListAdapter extends ArrayAdapter<String> {
 
         View rowView = inflater.inflate(R.layout.adapter_list, parent, false);
 
-        if (nom.get(position) != null) {
+        if (nombre.size() != 0) {
             //Defined Text
             TextView text_nom = (TextView) rowView.findViewById(R.id.text_adapter_nom);
             TextView text_nombre = (TextView) rowView.findViewById(R.id.text_adapter_nombre);
@@ -54,8 +54,8 @@ public class ListAdapter extends ArrayAdapter<String> {
             TextView text_nom = (TextView) rowView.findViewById(R.id.text_adapter_nom);
             TextView text_nombre = (TextView) rowView.findViewById(R.id.text_adapter_nombre);
 
-            text_nombre.setText("Erreur No Item");
-            text_nom.setText("Position : " + position);
+            text_nom.setText("Erreur No Item");
+            text_nombre.setText("Position : " + position);
         }
 
 
