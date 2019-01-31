@@ -1,15 +1,34 @@
 package fr.debrisgrollaud.gestionsdesstock.fournisseur;
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
-public class ListFournisseur extends AppCompatActivity {
+public class ListFournisseur extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_fournisseur);
+
+        ArrayList<String> list = new ArrayList<>();
+
+        //TODO : Get BDD
+        list.add("Null");
+
+        ListAdapter adaptateur = new ListAdapter(this, (String[]) list.toArray());
+        setListAdapter(adaptateur);
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Toast.makeText(this, "Position : " + position, Toast.LENGTH_LONG).show();
     }
 }
