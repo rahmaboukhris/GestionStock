@@ -78,7 +78,7 @@
             android:text="Liste des stockages" />
 
         <Button
-            android:id="@+id/toModifieritem"
+            android:id="@+id/toModifierItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"

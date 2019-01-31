@@ -23,7 +23,12 @@ public class ListStockage extends ListActivity {
         //TODO : Get BDD
         list.add("Null");
 
-        ListAdapter adaptateur = new ListAdapter(this, (String[]) list.toArray());
+        String array[] = new String[list.size()];
+        for(int j =0;j<list.size();j++){
+            array[j] = list.get(j);
+        }
+
+        ListAdapter adaptateur = new ListAdapter(this, array);
         setListAdapter(adaptateur);
     }
 
