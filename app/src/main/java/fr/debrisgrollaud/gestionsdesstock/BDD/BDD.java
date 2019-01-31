@@ -13,17 +13,17 @@ public class BDD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String req = "create table stockage(id text, nom text)";
+        String req = "create table stockage(id int, nom text)";
         db.execSQL(req);
-        req = "create table fournisseur(id text, nom text)";
+        req = "create table fournisseur(id int, nom text)";
         db.execSQL(req);
-        req = "create table lieux(id text, ville text, rue text, numero text, codepost text)";
+        req = "create table lieux(id int, ville text, rue text, numero int, codepost text)";
         db.execSQL(req);
         req = "create table seuil(alerte text, critique text)";
         db.execSQL(req);
-        req = "create table item(id text, nom text, quantiter text, reference text)";
+        req = "create table item(id int, nom text, quantite int, reference text)";
         db.execSQL(req);
-        req = "create table categorie(id text, nom text)";
+        req = "create table categorie(id int, nom text)";
         db.execSQL(req);
     }
 
