@@ -21,7 +21,7 @@ public class BDD extends SQLiteOpenHelper {
         db.execSQL(req);
         req = "create table seuil(alerte text, critique text)";
         db.execSQL(req);
-        req = "create table item(id text, nom text, quantier text, reference text)";
+        req = "create table item(id text, nom text, quantiter text, reference text)";
         db.execSQL(req);
         req = "create table categorie(id text, nom text)";
         db.execSQL(req);
