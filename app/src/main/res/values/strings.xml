@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Gestions des stock</string>
     <string name="app_name_ajout_lieu">Ajout d\'un lieu</string>
-    <string name="app_name_list_lieu">List des lieu</string>
+    <string name="app_name_list_lieu">Liste des lieux</string>
+    <string name="app_name_ajout_fournisseur">Ajout d\'un fournisseur</string>
+    <string name="app_name_list_fournisseur">Liste des fournisseurs</string>
+    <string name="app_name_ajout_item">Ajout d\'un item</string>
+    <string name="app_name_list_item">Liste des items</string>
+    <string name="app_name_modifier_item">Modifier un item</string>
+    <string name="app_name_list_precommande">Liste des précommandes</string>
+    <string name="app_name_ajout_stockage">Ajout d\'un stockage</string>
+    <string name="app_name_list_stockage">Liste des stockages</string>
+    <string name="app_name_modifier_stockage">Modifier un stockage</string>
 </resources>
