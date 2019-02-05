@@ -15,7 +15,7 @@ public class BDD extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String req = "create table stockage(id int, nom text, lieu text, dateAjout datetime)";
         db.execSQL(req);
-        req = "create table fournisseur(id int, nom text, lieu text, email text, telephone text)";
+        req = "create table fournisseur(id int, nom text, lieu text, email text, telephone int)";
         db.execSQL(req);
         req = "create table lieux(id int, ville text, rue text, numero int, codepost text)";
         db.execSQL(req);
