@@ -5,6 +5,7 @@ public class SeuilAlerte {
     private String alerte;
     private String critique;
 
+    //constructeurs
     public SeuilAlerte(String alerte, String critique) {
         this.alerte = alerte;
         this.critique = critique;

@@ -16,13 +16,13 @@ import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<String> {
 
-    //Liste of item
+    //Liste des item
     private static ArrayList<String> nom = new ArrayList<>();
     private static ArrayList<String> nombre = new ArrayList<>();
     private static ArrayList<ArrayList<Integer>> allert = new ArrayList<>();
 
 
-    //Call on create view
+    //appel du create view
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)
@@ -31,7 +31,7 @@ public class ListAdapter extends ArrayAdapter<String> {
         View rowView = inflater.inflate(R.layout.adapter_list, parent, false);
 
         if (nombre.size() != 0) {
-            //Defined Text
+            //définition du texte
             TextView text_nom = (TextView) rowView.findViewById(R.id.text_adapter_nom);
             TextView text_nombre = (TextView) rowView.findViewById(R.id.text_adapter_nombre);
 
@@ -42,7 +42,7 @@ public class ListAdapter extends ArrayAdapter<String> {
             int warning = allert.get(position).get(0);
             int danger = allert.get(position).get(1);
 
-            //Set Background color
+            //couleur de fond
             if (Integer.parseInt(nombre.get(position)) <= warning) {
                 rowView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorWarning));
             }
@@ -64,16 +64,16 @@ public class ListAdapter extends ArrayAdapter<String> {
         return rowView;
     }
 
-    //Constructor non argument
+    //constructeur sans argument
     public ListAdapter(Context context, String[] values) {
         super(context, R.layout.adapter_list, values);
     }
 
-    //Constructor List argument
+    //constructeur avec liste des arguments
     public ListAdapter(Context context, ArrayList<HashMap<String, Object>> list, List<String> listOption) {
         super(context, R.layout.adapter_list, listOption);
 
-        //Create list of item
+        //création de la liste des items
         for (HashMap<String, Object> item : list) {
             nom.add((String) item.get("nom"));
             nombre.add((String) item.get("nombre"));

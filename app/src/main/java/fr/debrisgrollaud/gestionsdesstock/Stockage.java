@@ -7,6 +7,7 @@ public class Stockage {
     private String lieu;
     private int dateAjout;
 
+    //constructeurs
     public Stockage(int id, String nom, String lieu, int dateAjout) {
         this.id = id;
         this.nom = nom;
@@ -14,6 +15,13 @@ public class Stockage {
         this.dateAjout = dateAjout;
     }
 
+    public Stockage(String nom, String lieu, int dateAjout) {
+        this.nom = nom;
+        this.lieu = lieu;
+        this.dateAjout = dateAjout;
+    }
+
+    //getters ans setters
     public int getId() {
         return id;
     }

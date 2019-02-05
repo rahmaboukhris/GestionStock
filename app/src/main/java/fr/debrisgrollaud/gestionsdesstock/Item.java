@@ -10,6 +10,7 @@ public class Item {
     private int dateAjout;
     private String fournisseur;
 
+    //constructeurs
     public Item(int id, String nom, String quantite, String reference, String categorie, int dateAjout, String fournisseur) {
         this.id = id;
         this.nom = nom;
@@ -20,6 +21,16 @@ public class Item {
         this.fournisseur = fournisseur;
     }
 
+    public Item(String nom, String quantite, String reference, String categorie, int dateAjout, String fournisseur) {
+        this.nom = nom;
+        this.quantite = quantite;
+        this.reference = reference;
+        this.categorie = categorie;
+        this.dateAjout = dateAjout;
+        this.fournisseur = fournisseur;
+    }
+
+    //getters and setters
     public int getId() {
         return id;
     }
