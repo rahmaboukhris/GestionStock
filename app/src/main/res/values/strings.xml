@@ -11,4 +11,6 @@
     <string name="app_name_ajout_stockage">Ajout d\'un stockage</string>
     <string name="app_name_list_stockage">Liste des stockages</string>
     <string name="app_name_modifier_stockage">Modifier un stockage</string>
+
+    <string name="app_tost_list_ajouter">Votre lieu a été ajouter !</string>
 </resources>
