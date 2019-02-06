@@ -17,9 +17,9 @@ import java.util.List;
 public class ListAdapter extends ArrayAdapter<String> {
 
     //Liste des item
-    private static ArrayList<String> nom = new ArrayList<>();
-    private static ArrayList<String> nombre = new ArrayList<>();
-    private static ArrayList<ArrayList<Integer>> allert = new ArrayList<>();
+    private ArrayList<String> nom = new ArrayList<>();
+    private ArrayList<String> nombre = new ArrayList<>();
+    private ArrayList<ArrayList<Integer>> allert = new ArrayList<>();
 
 
     //appel du create view
@@ -75,8 +75,12 @@ public class ListAdapter extends ArrayAdapter<String> {
     }
 
     //constructeur avec liste des arguments
-    public ListAdapter(Context context, ArrayList<HashMap<String, Object>> list, List<String> listOption) {
+    public ListAdapter(Context context, ArrayList<HashMap<String, Object>> list, List<String> listOption) throws Exception {
         super(context, R.layout.adapter_list, listOption);
+
+        if (list.size() != listOption.size()){
+            throw new Exception("Erreur dans la taille de la liste !");
+        }
 
         //création de la liste des items
         for (HashMap<String, Object> item : list) {
@@ -87,14 +91,4 @@ public class ListAdapter extends ArrayAdapter<String> {
 
 
     }
-
-    //Constructor List argument
-    public ListAdapter(Context context, List<Object> list, List<String> listOption) {
-        super(context, R.layout.adapter_list, listOption);
-
-
-
-    }
-
-
 }

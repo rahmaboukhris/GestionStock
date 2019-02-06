@@ -75,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         setActivityOnClick(button, caller, null);
     }
 
+    public static void setActivityOnClick(Class<?> caller, HashMap<String, Object> params) {
+        setActivityOnClick(null, caller, params);
+    }
+
+    public static void setActivityOnClick(Class<?> caller) {
+        setActivityOnClick(null, caller, null);
+    }
+
     //définir action sur onclick
     public static void setActivityOnClick(Button button, Class<?> caller, HashMap<String, Object> params) {
         final Intent activity_toX = new Intent(MainActivity.Instance, caller);
@@ -85,10 +93,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                MainActivity.Instance.startActivity(activity_toX);
-            }
-        });
+        if (button != null){
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    MainActivity.Instance.startActivity(activity_toX);
+                }
+            });
+        }else{
+            MainActivity.Instance.startActivity(activity_toX);
+        }
     }
 }
