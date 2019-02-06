@@ -1,20 +1,19 @@
 package fr.debrisgrollaud.gestionsdesstock.lieu;
 
-import android.Manifest;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
+import fr.debrisgrollaud.gestionsdesstock.BDD.GestionDB;
+import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
@@ -91,13 +90,31 @@ public class AjoutLieu extends AppCompatActivity {
             error = true;
         }
 
-        if (!error){
+        if (!error) {
             addLieu();
         }
 
     }
 
-    private void addLieu(){
+    private void addLieu() {
+
+        HashMap<String, String> hashMap = new HashMap<>();
+
+        hashMap.put("ville", ville_text.getText().toString());
+        hashMap.put("rue", rue_text.getText().toString());
+        hashMap.put("numero", num_text.getText().toString());
+        hashMap.put("codepost", postal_text.getText().toString());
+
+
+        MainActivity.BDD.open();
+
+        MainActivity.BDD.insert("lieu", hashMap);
+
+        ville_text.setText("");
+        rue_text.setText("");
+        num_text.setText("");
+        postal_text.setText("");
+
         Toast.makeText(MainActivity.Instance, R.string.app_tost_list_ajouter,
                 Toast.LENGTH_LONG).show();
     }
@@ -112,7 +129,7 @@ public class AjoutLieu extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (ville.getEditText() == null || rue.getEditText() == null || num.getEditText() == null || postal.getEditText() == null){
+                if (ville.getEditText() == null || rue.getEditText() == null || num.getEditText() == null || postal.getEditText() == null) {
                     return;
                 }
 

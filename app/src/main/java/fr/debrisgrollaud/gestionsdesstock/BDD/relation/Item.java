@@ -1,4 +1,4 @@
-package fr.debrisgrollaud.gestionsdesstock;
+package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
 public class Item {
 

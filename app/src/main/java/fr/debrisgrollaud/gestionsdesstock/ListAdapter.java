@@ -38,18 +38,23 @@ public class ListAdapter extends ArrayAdapter<String> {
             text_nombre.setText(nombre.get(position));
             text_nom.setText(nom.get(position));
 
-            //Get Level warning and danger
-            int warning = allert.get(position).get(0);
-            int danger = allert.get(position).get(1);
+            if (allert.get(position) != null) {
 
-            //Set Background color
-            if (Integer.parseInt(nombre.get(position)) <= warning) {
-                rowView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorWarning));
+                //Get Level warning and danger
+                int warning = allert.get(position).get(0);
+                int danger = allert.get(position).get(1);
+
+                //Set Background color
+                if (Integer.parseInt(nombre.get(position)) <= warning) {
+                    rowView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorWarning));
+                }
+
+                if (Integer.parseInt(nombre.get(position)) <= danger) {
+                    rowView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorDanger));
+                }
+
             }
 
-            if (Integer.parseInt(nombre.get(position)) <= danger) {
-                rowView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorDanger));
-            }
         } else {
             TextView text_nom = (TextView) rowView.findViewById(R.id.text_adapter_nom);
             TextView text_nombre = (TextView) rowView.findViewById(R.id.text_adapter_nombre);
@@ -79,6 +84,14 @@ public class ListAdapter extends ArrayAdapter<String> {
             nombre.add((String) item.get("nombre"));
             allert.add((ArrayList<Integer>) item.get("allert"));
         }
+
+
+    }
+
+    //Constructor List argument
+    public ListAdapter(Context context, List<Object> list, List<String> listOption) {
+        super(context, R.layout.adapter_list, listOption);
+
 
 
     }

@@ -1,6 +1,7 @@
 package fr.debrisgrollaud.gestionsdesstock.lieu;
 
 import android.app.ListActivity;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
+import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class ListLieu extends ListActivity {
@@ -24,61 +27,44 @@ public class ListLieu extends ListActivity {
         super.onCreate(savedInstanceState);
         setTitle(R.string.app_name_list_lieu);
 
-        String[] values = new String[]{"Device", "Géo localisation"};
-        Integer[] image = new Integer[]{R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground};
-
         ArrayList<HashMap<String, Object>> list = new ArrayList<>();
-
-        //BOUCHON START
-        //TODO : Récuperer de la BDD
 
         HashMap<String, Object> item;
         List<String> listOption = new ArrayList<>();
-        ArrayList<Integer> allert;
+        ArrayList<Integer> allert = null;
+
+        list.clear();
+
+        MainActivity.BDD.open();
+
+        Cursor cursor = MainActivity.BDD.select("lieu");
 
 
-        //item 1
-        allert = new ArrayList<>();
-        allert.add(5);
-        allert.add(2);
+        if (cursor != null){
 
-        item = new HashMap<>();
-        item.put("nom", "Nom Item 1");
-        item.put("nombre", "5");
-        item.put("allert", allert);
-        listOption.add((String) item.get("nom"));
+            while (cursor.moveToNext()) {
+                String id = cursor.getString(0);
+                String ville = cursor.getString(1);
+                String rue = cursor.getString(2);
+                String numero = cursor.getString(3);
+                String postal = cursor.getString(4);
 
-        list.add(item);
+                Lieu lieu = new Lieu(Integer.parseInt(id),ville,rue,numero,postal);
 
+                String adresse = lieu.getAdresse();
 
-        //item 2
-        allert = new ArrayList<>();
-        allert.add(5);
-        allert.add(2);
+                item = null;
+                item = new HashMap<>();
+                item.put("nom",adresse);
+                item.put("nombres",""); //TODO : Get all usage
+                item.put("allert", null);
+                listOption.add((String) item.get("adresse"));
 
-        item = new HashMap<>();
-        item.put("nom", "Nom Item 2");
-        item.put("nombre", "7");
-        item.put("allert", allert);
-        listOption.add((String) item.get("nom"));
+                list.add(item);
+                item = null;
+            }
 
-        list.add(item);
-
-
-        //item 3
-        allert = new ArrayList<>();
-        allert.add(5);
-        allert.add(2);
-
-        item = new HashMap<>();
-        item.put("nom", "Nom Item 3");
-        item.put("nombre", "1");
-        item.put("allert", allert);
-        listOption.add((String) item.get("nom"));
-
-        list.add(item);
-
-        //BOUCHON END
+        }
 
         ListAdapter adaptateur = new ListAdapter(this, list, listOption);
         setListAdapter(adaptateur);

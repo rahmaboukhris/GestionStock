@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
+import fr.debrisgrollaud.gestionsdesstock.BDD.BDD;
+import fr.debrisgrollaud.gestionsdesstock.BDD.GestionDB;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.AjoutFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.ListFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.item.AjoutItem;
@@ -27,11 +29,16 @@ import fr.debrisgrollaud.gestionsdesstock.stockage.ModifierStockage;
 public class MainActivity extends AppCompatActivity {
 
     public static MainActivity Instance;
+    public static GestionDB BDD;
+
+    public static Object Bouchon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Instance = this;
+        BDD = new GestionDB(this);
+
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_name);
 
