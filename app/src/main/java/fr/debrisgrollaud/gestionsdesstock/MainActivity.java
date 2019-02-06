@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_name);
 
-        //Get all Button
+        //Bouttons
         final Button button_toAjoutFournisseur = findViewById(R.id.toAjoutFournisseur);
         final Button button_toListFournisseur = findViewById(R.id.toListFournisseur);
         final Button button_toAjoutItem = findViewById(R.id.toAjoutItem);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button_toListStockage = findViewById(R.id.toListStockage);
         final Button button_toModifierStockage = findViewById(R.id.toModifierStockage);
 
-        //Set All Action on click
+        //Toutes les actions sont sur des clocks
         setActivityOnClick(button_toAjoutFournisseur, AjoutFournisseur.class);
         setActivityOnClick(button_toListFournisseur, ListFournisseur.class);
         setActivityOnClick(button_toAjoutItem, AjoutItem.class);
@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Overload if no parmas used
+    //Overload si pas de parma utilisés
     private static void setActivityOnClick(Button button, Class<?> caller) {
         setActivityOnClick(button, caller, null);
     }
 
-    //Set redirect action on click
+    //définir action sur onclick
     public static void setActivityOnClick(Button button, Class<?> caller, HashMap<String, Object> params) {
         final Intent activity_toX = new Intent(MainActivity.Instance, caller);
 

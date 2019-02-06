@@ -11,6 +11,7 @@ public class BDD extends SQLiteOpenHelper {
         super(context, name, factory, version);
     }
 
+    //création des tables dans la base de données
     @Override
     public void onCreate(SQLiteDatabase db) {
         String req = "create table stockage(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu text, dateAjout datetime)";

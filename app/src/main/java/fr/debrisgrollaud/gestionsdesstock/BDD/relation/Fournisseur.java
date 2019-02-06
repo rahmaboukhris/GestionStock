@@ -8,6 +8,7 @@ public class Fournisseur {
     private String email;
     private int telephone;
 
+    //constructeurs
     public Fournisseur(int id, String nom, String lieu, String email, int telephone) {
         this.id = id;
         this.nom = nom;
@@ -16,6 +17,14 @@ public class Fournisseur {
         this.telephone = telephone;
     }
 
+    public Fournisseur(String nom, String lieu, String email, int telephone) {
+        this.nom = nom;
+        this.lieu = lieu;
+        this.email = email;
+        this.telephone = telephone;
+    }
+
+    //getters and setters
     public int getId() {
         return id;
     }
