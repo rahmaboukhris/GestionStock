@@ -8,7 +8,7 @@ public class Lieu {
     private String numero;
     private String codePostal;
 
-    public Lieu(int id, String ville, String rue, String numero, String codePostal) {
+    public Lieu(int id, String numero, String rue, String ville, String codePostal) {
         this.id = id;
         this.ville = ville;
         this.rue = rue;
@@ -16,7 +16,7 @@ public class Lieu {
         this.codePostal = codePostal;
     }
 
-    public Lieu(String ville, String rue, String numero, String codePostal) {
+    public Lieu(String numero, String rue, String ville, String codePostal) {
         this.ville = ville;
         this.rue = rue;
         this.numero = numero;

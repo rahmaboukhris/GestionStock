@@ -1,8 +1,8 @@
 package fr.debrisgrollaud.gestionsdesstock.lieu;
 
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
-import fr.debrisgrollaud.gestionsdesstock.BDD.GestionDB;
-import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 

@@ -50,7 +50,7 @@ public class ListLieu extends ListActivity {
                 String numero = cursor.getString(3);
                 String postal = cursor.getString(4);
 
-                Lieu lieu = new Lieu(Integer.parseInt(id),ville,rue,numero,postal);
+                Lieu lieu = new Lieu(Integer.parseInt(id),numero,rue,ville,postal);
 
                 String adresse = lieu.getAdresse();
 

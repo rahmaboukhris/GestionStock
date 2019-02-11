@@ -37,7 +37,7 @@
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutStockage_numero"
+            android:id="@+id/input_ajoutStockage_nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -45,13 +45,26 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Numéro"
+                android:hint="Nom"
                 android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutStockage"
+            android:id="@+id/input_ajoutStockage_lieu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_ajoutStockage_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -59,8 +72,8 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Stockage"
-                android:inputType="text" />
+                android:hint="Date"
+                android:inputType="date" />
 
         </android.support.design.widget.TextInputLayout>
 

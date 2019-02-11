@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public static MainActivity Instance;
     public static GestionDB BDD;
 
-    public static Object Bouchon;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
