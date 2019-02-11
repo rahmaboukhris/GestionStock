@@ -27,19 +27,30 @@ public class GestionDB {
         maBase.close();
     }
 
-    public boolean insert(String table, HashMap<String, String> map){
+    public boolean insert(String table, HashMap<String, String> map) {
         ContentValues contentValues = new ContentValues();
 
-        for(Map.Entry<String, String> entry : map.entrySet()) {
-            contentValues.put(entry.getKey(),entry.getValue());
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            contentValues.put(entry.getKey(), entry.getValue());
         }
 
-        long result = maBase.insert(table,null ,contentValues);
+        long result = maBase.insert(table, null, contentValues);
         return result != -1;
     }
 
-    public Cursor select(String table){
-        Cursor res = maBase.rawQuery("select * from "+table,null);
+    public boolean update(String Id, String table, HashMap<String, String> map) {
+        ContentValues contentValues = new ContentValues();
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            contentValues.put(entry.getKey(), entry.getValue());
+        }
+
+        long result = maBase.update(table, contentValues, "id=" + Id, null);
+        return result != -1;
+    }
+
+    public Cursor select(String table) {
+        Cursor res = maBase.rawQuery("select * from " + table, null);
         return res;
     }
 }

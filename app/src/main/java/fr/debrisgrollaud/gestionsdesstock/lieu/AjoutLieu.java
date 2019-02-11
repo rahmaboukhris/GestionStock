@@ -17,14 +17,14 @@ import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class AjoutLieu extends AppCompatActivity {
 
-    private TextInputLayout ville;
-    private TextInputLayout rue;
-    private TextInputLayout num;
-    private TextInputLayout postal;
-    private EditText ville_text;
-    private EditText rue_text;
-    private EditText num_text;
-    private EditText postal_text;
+    protected TextInputLayout ville;
+    protected TextInputLayout rue;
+    protected TextInputLayout num;
+    protected TextInputLayout postal;
+    protected EditText ville_text;
+    protected EditText rue_text;
+    protected EditText num_text;
+    protected EditText postal_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class AjoutLieu extends AppCompatActivity {
 
     }
 
-    private void onValide() {
+    protected void onValide() {
 
         boolean error = false;
 
@@ -94,7 +94,7 @@ public class AjoutLieu extends AppCompatActivity {
 
     }
 
-    private void addLieu() {
+    protected void addLieu() {
 
         HashMap<String, String> hashMap = new HashMap<>();
 
@@ -117,7 +117,7 @@ public class AjoutLieu extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
     }
 
-    private TextWatcher textWatcher() {
+    protected TextWatcher textWatcher() {
         return new TextWatcher() {
 
             @Override

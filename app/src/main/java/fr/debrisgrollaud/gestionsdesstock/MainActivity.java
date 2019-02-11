@@ -73,21 +73,21 @@ public class MainActivity extends AppCompatActivity {
         setActivityOnClick(button, caller, null);
     }
 
-    public static void setActivityOnClick(Class<?> caller, HashMap<String, Object> params) {
+    public static void setActivity(Class<?> caller, HashMap<String, String> params) {
         setActivityOnClick(null, caller, params);
     }
 
-    public static void setActivityOnClick(Class<?> caller) {
+    public static void setActivity(Class<?> caller) {
         setActivityOnClick(null, caller, null);
     }
 
     //définir action sur onclick
-    public static void setActivityOnClick(Button button, Class<?> caller, HashMap<String, Object> params) {
+    public static void setActivityOnClick(Button button, Class<?> caller, HashMap<String, String> params) {
         final Intent activity_toX = new Intent(MainActivity.Instance, caller);
 
         if (params != null) {
-            for (Map.Entry<String, Object> param : params.entrySet()) {
-                activity_toX.putExtra(param.getKey(), param.getKey());
+            for (Map.Entry<String, String> param : params.entrySet()) {
+                activity_toX.putExtra(param.getKey(), param.getValue());
             }
         }
 
