@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:background="#458FF5"
             android:text="Ajouter un stockage"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/toListFournisseur"
