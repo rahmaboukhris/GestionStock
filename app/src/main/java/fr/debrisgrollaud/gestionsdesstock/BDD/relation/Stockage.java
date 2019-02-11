@@ -5,17 +5,17 @@ public class Stockage {
     private int id;
     private String nom;
     private String lieu;
-    private int dateAjout;
+    private String dateAjout;
 
     //constructeurs
-    public Stockage(int id, String nom, String lieu, int dateAjout) {
+    public Stockage(int id, String nom, String lieu, String dateAjout) {
         this.id = id;
         this.nom = nom;
         this.lieu = lieu;
         this.dateAjout = dateAjout;
     }
 
-    public Stockage(String nom, String lieu, int dateAjout) {
+    public Stockage(String nom, String lieu, String dateAjout) {
         this.nom = nom;
         this.lieu = lieu;
         this.dateAjout = dateAjout;
@@ -46,11 +46,11 @@ public class Stockage {
         this.lieu = lieu;
     }
 
-    public int getDateAjout() {
+    public String getDateAjout() {
         return dateAjout;
     }
 
-    public void setDateAjout(int dateAjout) {
+    public void setDateAjout(String dateAjout) {
         this.dateAjout = dateAjout;
     }
 

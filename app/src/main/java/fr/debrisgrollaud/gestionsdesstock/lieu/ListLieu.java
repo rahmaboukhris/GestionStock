@@ -52,14 +52,12 @@ public class ListLieu extends ListActivity {
 
                 Lieu lieu = new Lieu(Integer.parseInt(id),numero,rue,ville,postal);
 
-                String adresse = lieu.getAdresse();
-
                 item = null;
                 item = new HashMap<>();
-                item.put("nom",adresse);
-                item.put("nombres",""); //TODO : Get all usage
+                item.put("nom",lieu.getAdresse());
+                item.put("nombres","TODO"); //TODO : Get all usage
                 item.put("allert", null);
-                listOption.add((String) item.get("adresse"));
+                listOption.add((String) item.get("nom"));
 
                 list.add(item);
                 item = null;
