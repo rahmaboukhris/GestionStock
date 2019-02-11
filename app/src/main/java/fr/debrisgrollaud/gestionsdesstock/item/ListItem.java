@@ -13,6 +13,7 @@ import java.util.HashMap;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//List les item
 public class ListItem extends ListActivity {
 
     @Override

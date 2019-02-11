@@ -1,11 +1,11 @@
 package fr.debrisgrollaud.gestionsdesstock.item;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import fr.debrisgrollaud.gestionsdesstock.R;
 
-public class ModifierItem extends AppCompatActivity {
+//Modif d'un item
+public class ModifierItem extends AjoutItem {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,12 +1,21 @@
 package fr.debrisgrollaud.gestionsdesstock;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,13 +100,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (button != null){
+        if (button != null) {
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     MainActivity.Instance.startActivity(activity_toX);
                 }
             });
-        }else{
+        } else {
             MainActivity.Instance.startActivity(activity_toX);
         }
     }

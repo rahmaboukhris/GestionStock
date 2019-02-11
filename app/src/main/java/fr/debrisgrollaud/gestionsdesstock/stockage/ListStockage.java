@@ -19,6 +19,7 @@ import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//List des stockage
 public class ListStockage extends ListActivity {
 
     @Override

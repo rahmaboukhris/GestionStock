@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Ajout d'un item
 public class AjoutItem extends AppCompatActivity {
 
     @Override

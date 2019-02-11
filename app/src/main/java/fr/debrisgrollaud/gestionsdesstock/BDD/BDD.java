@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+//Fichier de creation de la BDD
 public class BDD extends SQLiteOpenHelper {
 
     //constructeur

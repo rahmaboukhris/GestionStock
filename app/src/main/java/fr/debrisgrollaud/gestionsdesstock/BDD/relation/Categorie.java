@@ -1,5 +1,6 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+//Fichier de relation BDD pour les Categorie d'item
 public class Categorie {
 
     private int id;

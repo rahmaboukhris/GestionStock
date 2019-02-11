@@ -15,6 +15,7 @@ import java.util.HashMap;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Ajout d'un lieu
 public class AjoutLieu extends AppCompatActivity {
 
     protected TextInputLayout ville;

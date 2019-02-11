@@ -29,6 +29,7 @@ import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Ajout d'un stockage
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class AjoutStockage extends AppCompatActivity {
 

@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Ajout d'un fournisseur
 public class AjoutFournisseur extends AppCompatActivity {
 
     private TextInputLayout nom;

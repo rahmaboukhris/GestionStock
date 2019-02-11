@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+//Adapter des liste
 public class ListAdapter extends ArrayAdapter<String> {
 
     //Liste des item

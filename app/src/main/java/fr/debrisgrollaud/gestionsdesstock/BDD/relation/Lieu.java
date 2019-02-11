@@ -1,5 +1,6 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+//Fichier de relation BDD pour les lieu utiliser par les fourniseur et les stockage
 public class Lieu {
 
     private int id;

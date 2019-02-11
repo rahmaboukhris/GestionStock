@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//List les fournisseur
 public class ListFournisseur extends ListActivity {
 
     @Override

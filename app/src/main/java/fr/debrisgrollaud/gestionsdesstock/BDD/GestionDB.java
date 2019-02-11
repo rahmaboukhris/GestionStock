@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+//Fichier de gestion de la BDD
 public class GestionDB {
     private SQLiteDatabase maBase;
     private BDD maBDD;

@@ -1,5 +1,6 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+//Fichier de relation BDD pour les fournisseur
 public class Fournisseur {
 
     private int id;

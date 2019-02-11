@@ -17,6 +17,7 @@ import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Modif un lieu
 public class ModifierLieu extends AjoutLieu {
 
     private String Id;
@@ -24,6 +25,7 @@ public class ModifierLieu extends AjoutLieu {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.app_name_modifier_lieu);
         Lieu lieu;
 
         Bundle extras = getIntent().getExtras();
@@ -37,8 +39,6 @@ public class ModifierLieu extends AjoutLieu {
             MainActivity.setActivity(ListLieu.class);
             return;
         }
-
-        setTitle(R.string.app_name_modifier_lieu);
 
         ville_text.setText(lieu.getVille());
         rue_text.setText(lieu.getRue());

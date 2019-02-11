@@ -1,17 +1,19 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+//Fichier de relation BDD pour les item
 public class Item {
 
     private int id;
     private String nom;
     private String quantite;
     private String reference;
-    private String categorie;
+    private Categorie categorie;
     private int dateAjout;
     private String fournisseur;
+    private SeuilAlerte seuilAlerte;
 
     //constructeurs
-    public Item(int id, String nom, String quantite, String reference, String categorie, int dateAjout, String fournisseur) {
+    public Item(int id, String nom, String quantite, String reference, Categorie categorie, int dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
         this.id = id;
         this.nom = nom;
         this.quantite = quantite;
@@ -19,15 +21,17 @@ public class Item {
         this.categorie = categorie;
         this.dateAjout = dateAjout;
         this.fournisseur = fournisseur;
+        this.seuilAlerte = seuilAlerte;
     }
 
-    public Item(String nom, String quantite, String reference, String categorie, int dateAjout, String fournisseur) {
+    public Item(String nom, String quantite, String reference, Categorie categorie, int dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
         this.nom = nom;
         this.quantite = quantite;
         this.reference = reference;
         this.categorie = categorie;
         this.dateAjout = dateAjout;
         this.fournisseur = fournisseur;
+        this.seuilAlerte = seuilAlerte;
     }
 
     //getters and setters
@@ -63,11 +67,11 @@ public class Item {
         this.reference = reference;
     }
 
-    public String getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
 
@@ -85,5 +89,13 @@ public class Item {
 
     public void setFournisseur(String fournisseur) {
         this.fournisseur = fournisseur;
+    }
+
+    public SeuilAlerte getSeuilAlerte() {
+        return seuilAlerte;
+    }
+
+    public void setSeuilAlerte(SeuilAlerte seuilAlerte) {
+        this.seuilAlerte = seuilAlerte;
     }
 }

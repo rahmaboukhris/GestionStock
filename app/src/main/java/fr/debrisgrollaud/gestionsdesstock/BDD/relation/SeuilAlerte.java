@@ -1,5 +1,6 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+//Fichier de relation BDD pour les seuil d'alerte des item
 public class SeuilAlerte {
 
     private String alerte;

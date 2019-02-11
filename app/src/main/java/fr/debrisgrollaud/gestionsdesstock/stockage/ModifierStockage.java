@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Modif stockage
 public class ModifierStockage extends AppCompatActivity {
 
     @Override

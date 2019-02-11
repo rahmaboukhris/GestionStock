@@ -21,6 +21,7 @@ import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//List des lieu
 public class ListLieu extends ListActivity {
 
     private ArrayList<HashMap<String, Object>> list = new ArrayList<>();

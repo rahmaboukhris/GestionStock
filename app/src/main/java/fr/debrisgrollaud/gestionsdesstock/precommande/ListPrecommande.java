@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//List les precommande en fonction du seuil d'alerte
 public class ListPrecommande extends ListActivity {
 
     @Override

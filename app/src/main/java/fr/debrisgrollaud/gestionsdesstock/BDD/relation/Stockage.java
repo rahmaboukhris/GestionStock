@@ -1,5 +1,8 @@
 package fr.debrisgrollaud.gestionsdesstock.BDD.relation;
 
+import fr.debrisgrollaud.gestionsdesstock.lieu.ListLieu;
+
+//Fichier de relation BDD pour les Stockage
 public class Stockage {
 
     private int id;
