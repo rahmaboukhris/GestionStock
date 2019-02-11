@@ -66,4 +66,9 @@ public class Lieu {
     public String getAdresse(){
         return getNumero() + " " + getRue() + " " + getVille() + " " + getCodePostal();
     }
+
+    @Override
+    public String toString() {
+        return getAdresse();
+    }
 }

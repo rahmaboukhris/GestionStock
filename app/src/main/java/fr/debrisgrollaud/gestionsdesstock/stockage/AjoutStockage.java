@@ -1,6 +1,7 @@
 package fr.debrisgrollaud.gestionsdesstock.stockage;
 
 import android.app.DatePickerDialog;
+import android.database.Cursor;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
@@ -12,14 +13,19 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
+import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
@@ -28,6 +34,7 @@ public class AjoutStockage extends AppCompatActivity {
 
     private TextInputLayout nom;
     private TextInputLayout date;
+    private Spinner lieu;
     private EditText nom_text;
     private EditText date_text;
 
@@ -56,6 +63,7 @@ public class AjoutStockage extends AppCompatActivity {
 
         nom = findViewById(R.id.input_ajoutStockage_nom);
         date = findViewById(R.id.input_ajoutStockage_date);
+        lieu = findViewById(R.id.input_ajoutStockage_lieu);
 
         valider.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -82,6 +90,38 @@ public class AjoutStockage extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+
+        MainActivity.BDD.open();
+
+        Cursor cursor = MainActivity.BDD.select("lieu");
+
+        ArrayList<String> arraySpinner = new ArrayList<>();
+
+        if (cursor != null){
+
+            while (cursor.moveToNext()) {
+                String id = cursor.getString(0);
+                String ville = cursor.getString(1);
+                String rue = cursor.getString(2);
+                String numero = cursor.getString(3);
+                String postal = cursor.getString(4);
+
+                Lieu lieu = new Lieu(Integer.parseInt(id),numero,rue,ville,postal);
+                String adresse = lieu.toString();
+                arraySpinner.add(adresse);
+            }
+
+        }
+
+        if (arraySpinner.isEmpty()){
+            arraySpinner.add("Acunne Adresse !");
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinner);
+
+        lieu.setAdapter(adapter);
     }
 
     private void onValide() {
@@ -96,6 +136,12 @@ public class AjoutStockage extends AppCompatActivity {
         if (date_text.length() == 0) {
             date.setError("Merci de remplir le champ");
             error = true;
+            Toast.makeText(this, "Merci de sélectionner un lieu", Toast.LENGTH_LONG).show();
+        }
+
+        if (lieu.getSelectedItem().toString().length() == 0 || lieu.getSelectedItem().toString().equals("Acunne Adresse !")) {
+            error = true;
+            Toast.makeText(this, "Merci de sélectionner un lieu", Toast.LENGTH_LONG).show();
         }
 
         if (!error) {
