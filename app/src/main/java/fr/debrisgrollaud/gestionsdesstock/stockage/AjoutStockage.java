@@ -33,11 +33,11 @@ import fr.debrisgrollaud.gestionsdesstock.R;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class AjoutStockage extends AppCompatActivity {
 
-    private TextInputLayout nom;
-    private TextInputLayout date;
-    private Spinner lieu;
-    private EditText nom_text;
-    private EditText date_text;
+    protected TextInputLayout nom;
+    protected TextInputLayout date;
+    protected Spinner lieu;
+    protected EditText nom_text;
+    protected EditText date_text;
 
     final Calendar myCalendar = Calendar.getInstance();
     final DatePickerDialog.OnDateSetListener date_class = new DatePickerDialog.OnDateSetListener() {
@@ -74,6 +74,7 @@ public class AjoutStockage extends AppCompatActivity {
 
         nom_text = nom.getEditText();
         date_text = date.getEditText();
+
 
         TextWatcher textWatcher = textWatcher();
 
@@ -125,7 +126,7 @@ public class AjoutStockage extends AppCompatActivity {
         lieu.setAdapter(adapter);
     }
 
-    private void onValide() {
+    protected void onValide() {
 
         boolean error = false;
 
@@ -151,7 +152,7 @@ public class AjoutStockage extends AppCompatActivity {
 
     }
 
-    private void addStockage() {
+    protected void addStockage() {
 
         HashMap<String, String> hashMap = new HashMap<>();
 
@@ -171,7 +172,7 @@ public class AjoutStockage extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
     }
 
-    private TextWatcher textWatcher() {
+    protected TextWatcher textWatcher() {
         return new TextWatcher() {
 
             @Override
