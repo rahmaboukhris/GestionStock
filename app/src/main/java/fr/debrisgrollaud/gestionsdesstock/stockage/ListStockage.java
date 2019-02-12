@@ -13,20 +13,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Stockage;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
+import fr.debrisgrollaud.gestionsdesstock.stockage.ModifierStockage;
 
 //List des stockage
 public class ListStockage extends ListActivity {
 
+    ArrayList<HashMap<String, Object>> list = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ArrayList<HashMap<String, Object>> list = new ArrayList<>();
 
         HashMap<String, Object> item;
         List<String> listOption = new ArrayList<>();
@@ -71,6 +71,21 @@ public class ListStockage extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Toast.makeText(this, "Position : " + position, Toast.LENGTH_LONG).show();
+        if (list.isEmpty()) return;
+
+        HashMap<String, Object> info = list.get(position);
+
+        Stockage stockage = (Stockage) info.get("instence");
+
+        if (stockage == null) return;
+
+        HashMap<String, String> params = new HashMap<>();
+
+        params.put("id", String.valueOf(stockage.getId()));
+        params.put("nom", stockage.getNom());
+        params.put("date", stockage.getDateAjout());
+        params.put("lieu", stockage.getLieu());
+
+        MainActivity.setActivity(ModifierStockage.class, params);
     }
 }

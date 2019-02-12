@@ -54,4 +54,9 @@ public class GestionDB {
         Cursor res = maBase.rawQuery("select * from " + table, null);
         return res;
     }
+
+    public Cursor select(String table, String where) {
+        Cursor res = maBase.rawQuery("select * from " + table + " where " + where, null);
+        return res;
+    }
 }
