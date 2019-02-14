@@ -23,6 +23,7 @@ import java.util.HashMap;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Categorie;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Fournisseur;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
+import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Stockage;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
@@ -40,8 +41,10 @@ public class AjoutItem extends AppCompatActivity {
     protected EditText critique_text;
     protected Spinner categorie;
     protected Spinner fournisseur;
+    protected Spinner stockage;
     protected ArrayList<Fournisseur> fournisseurs = new ArrayList<>();
     protected ArrayList<Categorie> categories = new ArrayList<>();
+    protected ArrayList<Stockage> stockages = new ArrayList<>();
 
 
     @Override
@@ -57,6 +60,7 @@ public class AjoutItem extends AppCompatActivity {
         critique = findViewById(R.id.input_ajoutItem_critique);
         fournisseur = findViewById(R.id.spiner_ajoutItem_fournisseur);
         categorie = findViewById(R.id.spiner_ajoutItem_categorie);
+        stockage = findViewById(R.id.spiner_ajoutItem_stockage);
 
         // Action on clique
         valider.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +124,11 @@ public class AjoutItem extends AppCompatActivity {
             Toast.makeText(this, "Merci de sélectionner une categorie", Toast.LENGTH_LONG).show();
         }
 
+        if (stockage.getSelectedItem().toString().length() == 0 || stockage.getSelectedItem().toString().equals("Aucun Stockage!")) {
+            error = true;
+            Toast.makeText(this, "Merci de sélectionner une stockage", Toast.LENGTH_LONG).show();
+        }
+
         if (!error) {
             addItem();
         }
@@ -141,6 +150,7 @@ public class AjoutItem extends AppCompatActivity {
         hashMapItem.put("alerte", alerte_text.getText().toString());
         hashMapItem.put("critique", critique_text.getText().toString());
         hashMapItem.put("dateAjout", formattedDate);
+        hashMapItem.put("stockage", String.valueOf(stockages.get((int) stockage.getSelectedItemId()).getId()));
         hashMapItem.put("categorie", String.valueOf(categories.get((int) categorie.getSelectedItemId()).getId()));
         hashMapItem.put("fournisseur", String.valueOf(fournisseurs.get((int) fournisseur.getSelectedItemId()).getId()));
 
@@ -154,8 +164,9 @@ public class AjoutItem extends AppCompatActivity {
         critique_text.setText("");
         categorie.setSelection(0);
         fournisseur.setSelection(0);
+        stockage.setSelection(0);
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_ajouter_forunisseur,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_ajouter_item,
                 Toast.LENGTH_LONG).show();
     }
 
@@ -270,6 +281,40 @@ public class AjoutItem extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, arraySpinnerCateg);
 
         categorie.setAdapter(adapterCateg);
+
+
+        //Get all Stockage
+        cursor = MainActivity.BDD.select("stockage");
+
+        ArrayList<String> arraySpinnerStockage = new ArrayList<>();
+
+        if (cursor != null) {
+
+            while (cursor.moveToNext()) {
+
+                //id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu INTEGER NOT NULL, dateAjout datetime
+
+                String id = cursor.getString(0);
+                String nom = cursor.getString(1);
+                String lieu = cursor.getString(1);
+                String dateAjout = cursor.getString(1);
+
+                Stockage info = new Stockage(Integer.parseInt(id), nom,lieu,dateAjout);
+                arraySpinnerStockage.add(info.getNom());
+                stockages.add(info);
+            }
+
+        }
+
+        if (arraySpinnerStockage.isEmpty()) {
+            arraySpinnerStockage.add("Aucun Stockage!");
+        }
+
+        //Ajout dans le spiner
+        ArrayAdapter<String> adapterStockage = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinnerStockage);
+
+        stockage.setAdapter(adapterStockage);
     }
 
 }

@@ -18,12 +18,15 @@
     <string name="app_name_modifier_item">Modifier un item</string>
 
     <string name="app_tost_ajouter_list">Votre lieu a été ajouter !</string>
-    <string name="app_tost_ajouter_categorie">Votre lieu a été ajouter !</string>
+    <string name="app_tost_ajouter_categorie">Votre categorie a été ajouter !</string>
     <string name="app_tost_ajouter_stockage">Votre stockage a été ajouter !</string>
     <string name="app_tost_ajouter_forunisseur">Votre fournisseur a été ajouter !</string>
+    <string name="app_tost_ajouter_item">Votre item a été ajouter !</string>
 
     <string name="app_tost_modifier_lieu">Votre lieu a été modifier !</string>
+    <string name="app_tost_modifier_categorie">Votre categorie a été modifier !</string>
     <string name="app_tost_modifier_stockage">Votre stockage a été modifier !</string>
     <string name="app_tost_modifier_forunisseur">Votre fournisseur a été modifier !</string>
+    <string name="app_tost_modifier_item">Votre item a été modifier !</string>
 
 </resources>

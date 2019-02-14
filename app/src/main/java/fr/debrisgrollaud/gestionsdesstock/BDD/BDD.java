@@ -32,8 +32,8 @@ public class BDD extends SQLiteOpenHelper {
         req = "create table categorie(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text)";
         db.execSQL(req);
 
-        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite text, reference text, categorie INTEGER, dateAjout datetime, fournisseur INTEGER, alerte text, critique text," +
-                "FOREIGN KEY(categorie) REFERENCES categorie(id),FOREIGN KEY(fournisseur) REFERENCES fournisseur(id))";
+        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite text, categorie INTEGER, stockage INTEGER, dateAjout datetime, fournisseur INTEGER, alerte text, critique text," +
+                "FOREIGN KEY(categorie) REFERENCES categorie(id),FOREIGN KEY(fournisseur) REFERENCES fournisseur(id),FOREIGN KEY(stockage) REFERENCES stockage(id))";
         db.execSQL(req);
 
     }

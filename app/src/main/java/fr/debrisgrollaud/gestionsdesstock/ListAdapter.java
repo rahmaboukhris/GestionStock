@@ -1,13 +1,11 @@
 package fr.debrisgrollaud.gestionsdesstock;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,7 +18,7 @@ public class ListAdapter extends ArrayAdapter<String> {
     //Liste des item
     private ArrayList<String> nom = new ArrayList<>();
     private ArrayList<String> nombre = new ArrayList<>();
-    private ArrayList<ArrayList<Integer>> allert = new ArrayList<>();
+    private ArrayList<ArrayList<String>> allert = new ArrayList<>();
 
 
     //appel du create view
@@ -42,8 +40,8 @@ public class ListAdapter extends ArrayAdapter<String> {
             if (allert.get(position) != null) {
 
                 //Get Level warning and danger
-                int warning = allert.get(position).get(0);
-                int danger = allert.get(position).get(1);
+                int warning = Integer.parseInt(allert.get(position).get(0));
+                int danger = Integer.parseInt(allert.get(position).get(1));
 
                 //Set Background color
                 if (Integer.parseInt(nombre.get(position)) <= warning) {
@@ -86,8 +84,8 @@ public class ListAdapter extends ArrayAdapter<String> {
         //création de la liste des items
         for (HashMap<String, Object> item : list) {
             nom.add((String) item.get("nom"));
-            nombre.add((String) item.get("nombre"));
-            allert.add((ArrayList<Integer>) item.get("allert"));
+            nombre.add((String) item.get("nombres"));
+            allert.add((ArrayList<String>) item.get("allert"));
         }
 
 

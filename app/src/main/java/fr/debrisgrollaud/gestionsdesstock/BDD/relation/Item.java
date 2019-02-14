@@ -6,43 +6,35 @@ public class Item {
     private int id;
     private String nom;
     private String quantite;
-    private String reference;
-    private Categorie categorie;
-    private int dateAjout;
+    private String stockage;
+    private String categorie;
+    private String dateAjout;
     private String fournisseur;
     private SeuilAlerte seuilAlerte;
 
     //constructeurs
-    public Item(int id, String nom, String quantite, String reference, Categorie categorie, int dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
+    public Item(int id, String nom, String quantite, String categorie, String stockage, String dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
         this.id = id;
         this.nom = nom;
         this.quantite = quantite;
-        this.reference = reference;
         this.categorie = categorie;
         this.dateAjout = dateAjout;
         this.fournisseur = fournisseur;
         this.seuilAlerte = seuilAlerte;
+        this.stockage = stockage;
     }
 
-    public Item(String nom, String quantite, String reference, Categorie categorie, int dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
+    public Item(String nom, String quantite, String categorie, String stockage, String dateAjout, String fournisseur, SeuilAlerte seuilAlerte) {
         this.nom = nom;
         this.quantite = quantite;
-        this.reference = reference;
         this.categorie = categorie;
         this.dateAjout = dateAjout;
         this.fournisseur = fournisseur;
         this.seuilAlerte = seuilAlerte;
+        this.stockage = stockage;
     }
 
     //getters and setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNom() {
         return nom;
     }
@@ -59,27 +51,19 @@ public class Item {
         this.quantite = quantite;
     }
 
-    public String getReference() {
-        return reference;
-    }
-
-    public void setReference(String reference) {
-        this.reference = reference;
-    }
-
-    public Categorie getCategorie() {
+    public String getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(Categorie categorie) {
+    public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
 
-    public int getDateAjout() {
+    public String getDateAjout() {
         return dateAjout;
     }
 
-    public void setDateAjout(int dateAjout) {
+    public void setDateAjout(String dateAjout) {
         this.dateAjout = dateAjout;
     }
 
@@ -97,5 +81,21 @@ public class Item {
 
     public void setSeuilAlerte(SeuilAlerte seuilAlerte) {
         this.seuilAlerte = seuilAlerte;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStockage() {
+        return stockage;
+    }
+
+    public void setStockage(String stockage) {
+        this.stockage = stockage;
     }
 }

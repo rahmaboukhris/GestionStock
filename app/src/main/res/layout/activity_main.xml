@@ -23,11 +23,27 @@
             android:visibility="visible" />
 
         <Button
+            android:id="@+id/toListFournisseur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des fournisseurs"
+            android:visibility="visible" />
+
+        <Button
             android:id="@+id/toAjoutItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"
             android:text="Ajouter un item"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/toListItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#458FF5"
+            android:text="Liste des Items"
             android:visibility="visible" />
 
         <Button
@@ -38,38 +54,6 @@
             android:text="Ajouter un lieu" />
 
         <Button
-            android:id="@+id/toAjoutStockage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Ajouter un stockage"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/toAjoutCategorie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Ajouter une catégorie"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/toListFournisseur"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Liste des fournisseurs"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/toListItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Liste des Items"
-            android:visibility="invisible" />
-
-        <Button
             android:id="@+id/toListLieu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,12 +61,12 @@
             android:text="Liste des lieux" />
 
         <Button
-            android:id="@+id/toListPrecommande"
+            android:id="@+id/toAjoutStockage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"
-            android:text="Liste des précommandes"
-            android:visibility="invisible" />
+            android:text="Ajouter un stockage"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/toListStockage"
@@ -93,27 +77,27 @@
             tools:visibility="visible" />
 
         <Button
-            android:id="@+id/toModifierItem"
+            android:id="@+id/toAjoutCategorie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"
-            android:text="Modifier un item"
-            android:visibility="invisible" />
+            android:text="Ajouter une catégorie"
+            android:visibility="visible" />
 
         <Button
-            android:id="@+id/toModifierStockage"
+            android:id="@+id/toListCategorie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"
-            android:text="Modifier un stockage"
-            android:visibility="invisible" />
+            android:text="Liste des Categorie"
+            tools:visibility="visible" />
 
         <Button
-            android:id="@+id/toModifierCategorie"
+            android:id="@+id/toListPrecommande"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#458FF5"
-            android:text="Modifier une catégorie"
+            android:text="Liste des précommandes"
             android:visibility="visible" />
 
     </LinearLayout>

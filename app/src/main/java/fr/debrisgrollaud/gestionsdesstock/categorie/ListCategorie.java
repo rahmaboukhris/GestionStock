@@ -46,6 +46,7 @@ public class ListCategorie extends ListActivity {
                 item = null;
                 item = new HashMap<>();
                 item.put("nom", categorie.getNom());
+                item.put("instence", categorie);
                 listOption.add((String) item.get("nom"));
 
                 list.add(item);

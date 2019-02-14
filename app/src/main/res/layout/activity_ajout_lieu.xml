@@ -21,8 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <!-- TODO Espacement des lement -->
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_ajoutLieu_ville"
             android:layout_width="match_parent"

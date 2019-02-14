@@ -2,11 +2,13 @@ package fr.debrisgrollaud.gestionsdesstock.categorie;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Categorie;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
+import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class ModifierCategorie extends AjoutCategorie{
     private String Id;
@@ -42,6 +44,9 @@ public class ModifierCategorie extends AjoutCategorie{
         MainActivity.BDD.open();
 
         MainActivity.BDD.update(Id,"categorie", hashMap);
+
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_modifier_categorie,
+                Toast.LENGTH_LONG).show();
 
         MainActivity.setActivity(ListCategorie.class);
     }
