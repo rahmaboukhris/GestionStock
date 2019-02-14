@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+<<<<<<< HEAD
+=======
+        <activity android:name=".fournisseur.ModifierFournisseur"></activity>
+>>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
         <activity android:name=".lieu.ModifierLieu" />
         <activity android:name=".item.ModifierItem" />
         <activity android:name=".stockage.ModifierStockage" />

@@ -60,6 +60,9 @@ public class ModifierLieu extends AjoutLieu {
 
         MainActivity.BDD.update(Id,"lieu", hashMap);
 
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_modifier_lieu,
+                Toast.LENGTH_LONG).show();
+
         MainActivity.setActivity(ListLieu.class);
     }
 

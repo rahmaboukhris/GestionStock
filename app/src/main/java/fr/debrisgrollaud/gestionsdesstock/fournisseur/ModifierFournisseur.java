@@ -1,4 +1,4 @@
-package fr.debrisgrollaud.gestionsdesstock.stockage;
+package fr.debrisgrollaud.gestionsdesstock.fournisseur;
 
 import android.database.Cursor;
 import android.icu.text.SimpleDateFormat;
@@ -13,14 +13,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Fournisseur;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Stockage;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
-import fr.debrisgrollaud.gestionsdesstock.stockage.ListStockage;
 
-//Modif stockage
-public class ModifierStockage extends AjoutStockage {
+//Modif d'un fournisseur
+public class ModifierFournisseur extends AjoutFournisseur {
 
     private String Id;
 
@@ -28,24 +28,31 @@ public class ModifierStockage extends AjoutStockage {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.app_name_modifier_stockage);
-        Stockage stockage;
+        setTitle(R.string.app_name_modifier_fournisseur);
+        Fournisseur fournisseur;
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) return;
 
+        //Recuperation des extras
         Id = extras.getString("id");
 
-        stockage = new Stockage(extras.getString("nom"), extras.getString("date"), extras.getString("lieu"));
+        fournisseur = new Fournisseur(extras.getString("nom"), extras.getString("lieu"),extras.getString("email"),extras.getString("telephone"));
 
-        nom_text.setText(stockage.getNom());
+        //Definition des texte dans la view
+        nom_text.setText(fournisseur.getNom());
+        email_text.setText(fournisseur.getEmail());
+        telephone_text.setText(fournisseur.getTelephone());
 
+        //Open BDD
         MainActivity.BDD.open();
 
+        //Recuperation du lieu avec l'id
         Cursor cursor = MainActivity.BDD.select("lieu", "id == " + extras.getString("lieu"));
 
         ArrayList<String> arraySpinner = new ArrayList<>();
 
+        //lieu pour le spiner
         lieux.clear();
 
         if (cursor != null) {
@@ -55,6 +62,7 @@ public class ModifierStockage extends AjoutStockage {
             lieux.add(lieu);
         }
 
+        //Recuperation de tout les lieu
         cursor = MainActivity.BDD.select("lieu");
 
         if (cursor != null){
@@ -62,6 +70,7 @@ public class ModifierStockage extends AjoutStockage {
                 while (cursor.moveToNext()) {
                     Lieu lieu = cursotToLieu(cursor);
 
+                    //Ajout du lieu si cela n'ais pas celuis de basse
                     if (!String.valueOf(lieu.getId()).equals(extras.getString("lieu"))){
                         arraySpinner.add(lieu.getAdresse());
                         lieux.add(lieu);
@@ -70,30 +79,29 @@ public class ModifierStockage extends AjoutStockage {
             }
         }
 
+        //envoie au spiner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
         lieu.setAdapter(adapter);
     }
 
+    //Update du fournisseur
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    protected void addStockage() {
-
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        String formattedDate = df.format(c.getTime());
+    protected void addFournisseur() {
 
         HashMap<String, String> hashMap = new HashMap<>();
 
         hashMap.put("nom", nom_text.getText().toString());
+        hashMap.put("email", email_text.getText().toString());
+        hashMap.put("telephone", telephone_text.getText().toString());
         hashMap.put("lieu", String.valueOf(lieux.get((int) lieu.getSelectedItemId()).getId()));
-        hashMap.put("dateAjout", formattedDate);
 
         MainActivity.BDD.open();
 
-        MainActivity.BDD.update(Id, "stockage", hashMap);
+        MainActivity.BDD.update(Id,"fournisseur", hashMap);
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_modifier_stockage,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_modifier_forunisseur,
                 Toast.LENGTH_LONG).show();
 
         MainActivity.setActivity(MainActivity.class);

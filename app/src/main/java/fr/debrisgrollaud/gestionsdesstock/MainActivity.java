@@ -1,27 +1,14 @@
 package fr.debrisgrollaud.gestionsdesstock;
 
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Base64;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
-import fr.debrisgrollaud.gestionsdesstock.BDD.BDD;
 import fr.debrisgrollaud.gestionsdesstock.BDD.GestionDB;
 import fr.debrisgrollaud.gestionsdesstock.categorie.AjoutCategorie;
 import fr.debrisgrollaud.gestionsdesstock.categorie.ModifierCategorie;
@@ -29,13 +16,11 @@ import fr.debrisgrollaud.gestionsdesstock.fournisseur.AjoutFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.ListFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.item.AjoutItem;
 import fr.debrisgrollaud.gestionsdesstock.item.ListItem;
-import fr.debrisgrollaud.gestionsdesstock.item.ModifierItem;
 import fr.debrisgrollaud.gestionsdesstock.lieu.AjoutLieu;
 import fr.debrisgrollaud.gestionsdesstock.lieu.ListLieu;
 import fr.debrisgrollaud.gestionsdesstock.precommande.ListPrecommande;
 import fr.debrisgrollaud.gestionsdesstock.stockage.AjoutStockage;
 import fr.debrisgrollaud.gestionsdesstock.stockage.ListStockage;
-import fr.debrisgrollaud.gestionsdesstock.stockage.ModifierStockage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,30 +41,34 @@ public class MainActivity extends AppCompatActivity {
         final Button button_toListFournisseur = findViewById(R.id.toListFournisseur);
         final Button button_toAjoutItem = findViewById(R.id.toAjoutItem);
         final Button button_toListItem = findViewById(R.id.toListItem);
-        final Button button_toModifierItem = findViewById(R.id.toModifierItem);
         final Button button_toAjoutLieu = findViewById(R.id.toAjoutLieu);
         final Button button_toListLieu = findViewById(R.id.toListLieu);
         final Button button_toListPrecommande = findViewById(R.id.toListPrecommande);
         final Button button_toAjoutStockage = findViewById(R.id.toAjoutStockage);
         final Button button_toListStockage = findViewById(R.id.toListStockage);
+<<<<<<< HEAD
         final Button button_toModifierStockage = findViewById(R.id.toModifierStockage);
         final Button button_toAjoutCategorie = findViewById(R.id.toAjoutCategorie);
         final Button button_toModifierCategorie = findViewById(R.id.toModifierCategorie);
+=======
+>>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
 
         //Toutes les actions sont sur des clocks
         setActivityOnClick(button_toAjoutFournisseur, AjoutFournisseur.class);
         setActivityOnClick(button_toListFournisseur, ListFournisseur.class);
         setActivityOnClick(button_toAjoutItem, AjoutItem.class);
         setActivityOnClick(button_toListItem, ListItem.class);
-        setActivityOnClick(button_toModifierItem, ModifierItem.class);
         setActivityOnClick(button_toAjoutLieu, AjoutLieu.class);
         setActivityOnClick(button_toListLieu, ListLieu.class);
         setActivityOnClick(button_toListPrecommande, ListPrecommande.class);
         setActivityOnClick(button_toAjoutStockage, AjoutStockage.class);
         setActivityOnClick(button_toListStockage, ListStockage.class);
+<<<<<<< HEAD
         setActivityOnClick(button_toModifierStockage, ModifierStockage.class);
         setActivityOnClick(button_toAjoutCategorie, AjoutCategorie.class);
         setActivityOnClick(button_toModifierCategorie, ModifierCategorie.class);
+=======
+>>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
 
     }
 

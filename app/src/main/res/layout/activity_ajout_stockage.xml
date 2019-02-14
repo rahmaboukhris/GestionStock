@@ -62,7 +62,7 @@
                 android:text="Lieu" />
 
             <Spinner
-                android:id="@+id/input_ajoutStockage_lieu"
+                android:id="@+id/spiner_ajoutStockage_lieu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
