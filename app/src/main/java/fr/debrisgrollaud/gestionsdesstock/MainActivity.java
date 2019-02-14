@@ -23,6 +23,8 @@ import java.util.concurrent.Callable;
 
 import fr.debrisgrollaud.gestionsdesstock.BDD.BDD;
 import fr.debrisgrollaud.gestionsdesstock.BDD.GestionDB;
+import fr.debrisgrollaud.gestionsdesstock.categorie.AjoutCategorie;
+import fr.debrisgrollaud.gestionsdesstock.categorie.ModifierCategorie;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.AjoutFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.fournisseur.ListFournisseur;
 import fr.debrisgrollaud.gestionsdesstock.item.AjoutItem;
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         final Button button_toAjoutStockage = findViewById(R.id.toAjoutStockage);
         final Button button_toListStockage = findViewById(R.id.toListStockage);
         final Button button_toModifierStockage = findViewById(R.id.toModifierStockage);
+        final Button button_toAjoutCategorie = findViewById(R.id.toAjoutCategorie);
+        final Button button_toModifierCategorie = findViewById(R.id.toModifierCategorie);
 
         //Toutes les actions sont sur des clocks
         setActivityOnClick(button_toAjoutFournisseur, AjoutFournisseur.class);
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         setActivityOnClick(button_toAjoutStockage, AjoutStockage.class);
         setActivityOnClick(button_toListStockage, ListStockage.class);
         setActivityOnClick(button_toModifierStockage, ModifierStockage.class);
+        setActivityOnClick(button_toAjoutCategorie, AjoutCategorie.class);
+        setActivityOnClick(button_toModifierCategorie, ModifierCategorie.class);
 
     }
 
