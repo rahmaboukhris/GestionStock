@@ -34,25 +34,9 @@ import fr.debrisgrollaud.gestionsdesstock.R;
 public class AjoutStockage extends AppCompatActivity {
 
     protected TextInputLayout nom;
-    protected TextInputLayout date;
     protected Spinner lieu;
     protected EditText nom_text;
-    protected EditText date_text;
-
-    final Calendar myCalendar = Calendar.getInstance();
-    final DatePickerDialog.OnDateSetListener date_class = new DatePickerDialog.OnDateSetListener() {
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            // TODO Auto-generated method stub
-            myCalendar.set(Calendar.YEAR, year);
-            myCalendar.set(Calendar.MONTH, monthOfYear);
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
-
-    };
+    protected ArrayList<Lieu> lieux = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +47,6 @@ public class AjoutStockage extends AppCompatActivity {
         Button valider = findViewById(R.id.button_ajout_stockage);
 
         nom = findViewById(R.id.input_ajoutStockage_nom);
-        date = findViewById(R.id.input_ajoutStockage_date);
         lieu = findViewById(R.id.input_ajoutStockage_lieu);
 
         valider.setOnClickListener(new View.OnClickListener() {
@@ -73,26 +56,10 @@ public class AjoutStockage extends AppCompatActivity {
         });
 
         nom_text = nom.getEditText();
-        date_text = date.getEditText();
-
 
         TextWatcher textWatcher = textWatcher();
 
         nom_text.addTextChangedListener(textWatcher);
-
-        date_text.addTextChangedListener(textWatcher);
-        date_text.setInputType(InputType.TYPE_NULL);
-        date_text.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                new DatePickerDialog(AjoutStockage.this, date_class, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
 
         MainActivity.BDD.open();
 
@@ -112,6 +79,7 @@ public class AjoutStockage extends AppCompatActivity {
                 Lieu lieu = new Lieu(Integer.parseInt(id),numero,rue,ville,postal);
                 String adresse = lieu.toString();
                 arraySpinner.add(adresse);
+                lieux.add(lieu);
             }
 
         }
@@ -135,12 +103,6 @@ public class AjoutStockage extends AppCompatActivity {
             error = true;
         }
 
-        if (date_text.length() == 0) {
-            date.setError("Merci de remplir le champ");
-            error = true;
-            Toast.makeText(this, "Merci de sélectionner un lieu", Toast.LENGTH_LONG).show();
-        }
-
         if (lieu.getSelectedItem().toString().length() == 0 || lieu.getSelectedItem().toString().equals("Acunne Adresse !")) {
             error = true;
             Toast.makeText(this, "Merci de sélectionner un lieu", Toast.LENGTH_LONG).show();
@@ -154,11 +116,15 @@ public class AjoutStockage extends AppCompatActivity {
 
     protected void addStockage() {
 
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String formattedDate = df.format(c.getTime());
+
         HashMap<String, String> hashMap = new HashMap<>();
 
         hashMap.put("nom", nom_text.getText().toString());
-        hashMap.put("lieu", "1 chemin du bersoleau meursac 17120");
-        hashMap.put("dateAjout", date_text.getText().toString());
+        hashMap.put("lieu", String.valueOf(lieux.get((int) lieu.getSelectedItemId()).getId()));
+        hashMap.put("dateAjout", formattedDate);
 
 
         MainActivity.BDD.open();
@@ -166,9 +132,8 @@ public class AjoutStockage extends AppCompatActivity {
         MainActivity.BDD.insert("stockage", hashMap);
 
         nom_text.setText("");
-        date_text.setText("");
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_list_ajouter,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_stockage_ajouter,
                 Toast.LENGTH_LONG).show();
     }
 
@@ -182,17 +147,12 @@ public class AjoutStockage extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (nom.getEditText() == null || date.getEditText() == null) {
+                if (nom.getEditText() == null) {
                     return;
                 }
 
                 if (nom.getEditText().getText().hashCode() == s.hashCode() && count != 0) {
                     nom.setError(null);
-                    return;
-                }
-
-                if (date.getEditText().getText().hashCode() == s.hashCode() && count != 0) {
-                    date.setError(null);
                     return;
                 }
             }
@@ -201,13 +161,5 @@ public class AjoutStockage extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         };
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private void updateLabel() {
-        String myFormat = "dd/MM/yyyy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.FRANCE);
-
-        date_text.setText(sdf.format(myCalendar.getTime()));
     }
 }
