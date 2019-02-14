@@ -53,6 +53,7 @@ public class ListStockage extends ListActivity {
                 item.put("nom",stockage.getNom());
                 item.put("nombres","TODO"); //TODO : Get all usage
                 item.put("allert", null);
+                item.put("instence", stockage);
                 listOption.add((String) item.get("nom"));
 
                 list.add(item);
