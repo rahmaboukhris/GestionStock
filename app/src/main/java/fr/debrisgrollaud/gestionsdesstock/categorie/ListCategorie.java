@@ -69,18 +69,15 @@ public class ListCategorie extends ListActivity {
 
         HashMap<String, Object> info = list.get(position);
 
-        Categorie categorie = (Lieu) info.get("instence");
+        Categorie categorie = (Categorie) info.get("instence");
 
-        if (lieu == null) return;
+        if (categorie == null) return;
 
         HashMap<String, String> params = new HashMap<>();
 
-        params.put("id", String.valueOf(lieu.getId()));
-        params.put("numero", lieu.getNumero());
-        params.put("rue", lieu.getRue());
-        params.put("ville", lieu.getVille());
-        params.put("codepostal", lieu.getCodePostal());
+        params.put("id", String.valueOf(categorie.getId()));
+        params.put("nom", categorie.getNom());
 
-        MainActivity.setActivity(ModifierLieu.class, params);
+        MainActivity.setActivity(ModifierCategorie.class, params);
     }
 }
