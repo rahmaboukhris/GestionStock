@@ -1,6 +1,5 @@
 package fr.debrisgrollaud.gestionsdesstock.stockage;
 
-import android.app.DatePickerDialog;
 import android.database.Cursor;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
@@ -10,20 +9,16 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Lieu;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
@@ -47,7 +42,7 @@ public class AjoutStockage extends AppCompatActivity {
         Button valider = findViewById(R.id.button_ajout_stockage);
 
         nom = findViewById(R.id.input_ajoutStockage_nom);
-        lieu = findViewById(R.id.input_ajoutStockage_lieu);
+        lieu = findViewById(R.id.input_ajoutFournisseur_lieu);
 
         valider.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -133,7 +128,7 @@ public class AjoutStockage extends AppCompatActivity {
 
         nom_text.setText("");
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_stockage_ajouter,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_ajouter_stockage,
                 Toast.LENGTH_LONG).show();
     }
 

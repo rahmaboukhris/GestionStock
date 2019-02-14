@@ -7,10 +7,10 @@ public class Fournisseur {
     private String nom;
     private String lieu;
     private String email;
-    private int telephone;
+    private String telephone;
 
     //constructeurs
-    public Fournisseur(int id, String nom, String lieu, String email, int telephone) {
+    public Fournisseur(int id, String nom, String lieu, String email, String telephone) {
         this.id = id;
         this.nom = nom;
         this.lieu = lieu;
@@ -18,7 +18,7 @@ public class Fournisseur {
         this.telephone = telephone;
     }
 
-    public Fournisseur(String nom, String lieu, String email, int telephone) {
+    public Fournisseur(String nom, String lieu, String email, String telephone) {
         this.nom = nom;
         this.lieu = lieu;
         this.email = email;
@@ -58,11 +58,11 @@ public class Fournisseur {
         this.email = email;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 }

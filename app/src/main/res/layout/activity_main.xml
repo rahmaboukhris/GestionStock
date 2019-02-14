@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:background="#458FF5"
             android:text="Ajouter un fournisseur"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/toAjoutItem"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:background="#458FF5"
             android:text="Liste des fournisseurs"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/toListItem"
@@ -84,21 +84,6 @@
             android:text="Liste des stockages"
             tools:visibility="visible" />
 
-        <Button
-            android:id="@+id/toModifierItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Modifier un item"
-            android:visibility="invisible" />
-
-        <Button
-            android:id="@+id/toModifierStockage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#458FF5"
-            android:text="Modifier un stockage"
-            android:visibility="invisible" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

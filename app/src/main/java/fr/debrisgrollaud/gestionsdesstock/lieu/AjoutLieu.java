@@ -114,7 +114,7 @@ public class AjoutLieu extends AppCompatActivity {
         num_text.setText("");
         postal_text.setText("");
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_list_ajouter,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_ajouter_list,
                 Toast.LENGTH_LONG).show();
     }
 
