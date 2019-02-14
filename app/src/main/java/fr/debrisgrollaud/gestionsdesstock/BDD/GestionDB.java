@@ -39,6 +39,7 @@ public class GestionDB {
         return result != -1;
     }
 
+    //Update d'une talbes avec id
     public boolean update(String Id, String table, HashMap<String, String> map) {
         ContentValues contentValues = new ContentValues();
 
@@ -50,11 +51,13 @@ public class GestionDB {
         return result != -1;
     }
 
+    //Select all in table
     public Cursor select(String table) {
         Cursor res = maBase.rawQuery("select * from " + table, null);
         return res;
     }
 
+    //Select all in table and Where
     public Cursor select(String table, String where) {
         Cursor res = maBase.rawQuery("select * from " + table + " where " + where, null);
         return res;

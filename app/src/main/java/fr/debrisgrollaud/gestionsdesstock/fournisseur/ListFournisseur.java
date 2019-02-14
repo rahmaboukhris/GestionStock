@@ -35,8 +35,10 @@ public class ListFournisseur extends ListActivity {
 
         list.clear();
 
+        //Open BDD
         MainActivity.BDD.open();
 
+        //Get all fournisseur
         Cursor cursor = MainActivity.BDD.select("fournisseur");
 
         if (cursor != null){
@@ -64,6 +66,7 @@ public class ListFournisseur extends ListActivity {
 
         }
 
+        //Send adapter
         try {
             ListAdapter adaptateur = new ListAdapter(this, list, listOption);
             setListAdapter(adaptateur);
@@ -73,6 +76,7 @@ public class ListFournisseur extends ListActivity {
     }
 
     @Override
+    //Redirection vers la modif
     protected void onListItemClick(ListView l, View v, int position, long id) {
         if (list.isEmpty()) return;
 

@@ -37,8 +37,10 @@ public class ListLieu extends ListActivity {
 
         list.clear();
 
+        //Open BDD
         MainActivity.BDD.open();
 
+        //Get all lieu
         Cursor cursor = MainActivity.BDD.select("lieu");
 
 
@@ -67,6 +69,8 @@ public class ListLieu extends ListActivity {
 
         }
 
+
+        //envoie a l'adapteur
         try {
             ListAdapter adaptateur = new ListAdapter(this, list, listOption);
             setListAdapter(adaptateur);

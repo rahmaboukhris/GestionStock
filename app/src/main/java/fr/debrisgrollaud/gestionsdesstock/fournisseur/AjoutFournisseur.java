@@ -24,6 +24,7 @@ import fr.debrisgrollaud.gestionsdesstock.R;
 //Ajout d'un fournisseur
 public class AjoutFournisseur extends AppCompatActivity {
 
+    //Utils
     protected TextInputLayout nom;
     protected Spinner lieu;
     protected TextInputLayout email;
@@ -41,6 +42,7 @@ public class AjoutFournisseur extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_fournisseur);
 
+        //Recup des element
         Button valider = findViewById(R.id.button_ajout_fournisseur);
 
         nom = findViewById(R.id.input_ajoutFournisseur_nom);
@@ -48,24 +50,29 @@ public class AjoutFournisseur extends AppCompatActivity {
         telephone = findViewById(R.id.input_ajoutFournisseur_telephone);
         lieu = findViewById(R.id.input_ajoutFournisseur_lieu);
 
+        // Action on clique
         valider.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onValide();
             }
         });
 
+        //Get text
         nom_text = nom.getEditText();
         email_text = email.getEditText();
         telephone_text = telephone.getEditText();
 
+        //Text Watcher, on validate
         TextWatcher textWatcher = textWatcher();
 
         nom_text.addTextChangedListener(textWatcher);
         email_text.addTextChangedListener(textWatcher);
         telephone_text.addTextChangedListener(textWatcher);
 
+        //Open BDD
         MainActivity.BDD.open();
 
+        //Get all lieu
         Cursor cursor = MainActivity.BDD.select("lieu");
 
         ArrayList<String> arraySpinner = new ArrayList<>();
@@ -91,6 +98,7 @@ public class AjoutFournisseur extends AppCompatActivity {
             arraySpinner.add("Acunne Adresse !");
         }
 
+        //Ajout dans le spiner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
 
@@ -98,6 +106,7 @@ public class AjoutFournisseur extends AppCompatActivity {
 
     }
 
+    //on validate on clique
     protected void onValide() {
 
         boolean error = false;
@@ -128,6 +137,7 @@ public class AjoutFournisseur extends AppCompatActivity {
 
     }
 
+    //Ajout du fournissuer
     protected void addFournisseur() {
 
         HashMap<String, String> hashMap = new HashMap<>();

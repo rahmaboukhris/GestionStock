@@ -18,6 +18,7 @@ import fr.debrisgrollaud.gestionsdesstock.R;
 //Ajout d'un lieu
 public class AjoutLieu extends AppCompatActivity {
 
+    //Utilis
     protected TextInputLayout ville;
     protected TextInputLayout rue;
     protected TextInputLayout num;
@@ -33,6 +34,7 @@ public class AjoutLieu extends AppCompatActivity {
         setContentView(R.layout.activity_ajout_lieu);
         setTitle(R.string.app_name_ajout_lieu);
 
+        //Recup des element
         Button valider = findViewById(R.id.button_ajout_lieux);
 
         ville = findViewById(R.id.input_ajoutLieu_ville);
@@ -51,6 +53,7 @@ public class AjoutLieu extends AppCompatActivity {
         num_text = num.getEditText();
         postal_text = postal.getEditText();
 
+        //Valide on text
         TextWatcher textWatcher = textWatcher();
 
         ville_text.addTextChangedListener(textWatcher);
@@ -60,6 +63,7 @@ public class AjoutLieu extends AppCompatActivity {
 
     }
 
+    //Validation lors du clique
     protected void onValide() {
 
         boolean error = false;
@@ -95,6 +99,7 @@ public class AjoutLieu extends AppCompatActivity {
 
     }
 
+    //Ajout du lieu dans la BDD
     protected void addLieu() {
 
         HashMap<String, String> hashMap = new HashMap<>();

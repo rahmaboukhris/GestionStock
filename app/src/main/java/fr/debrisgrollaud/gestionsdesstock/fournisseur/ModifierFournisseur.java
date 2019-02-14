@@ -19,6 +19,7 @@ import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Stockage;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
+//Modif d'un fournisseur
 public class ModifierFournisseur extends AjoutFournisseur {
 
     private String Id;
@@ -33,20 +34,25 @@ public class ModifierFournisseur extends AjoutFournisseur {
         Bundle extras = getIntent().getExtras();
         if (extras == null) return;
 
+        //Recuperation des extras
         Id = extras.getString("id");
 
         fournisseur = new Fournisseur(extras.getString("nom"), extras.getString("lieu"),extras.getString("email"),extras.getString("telephone"));
 
+        //Definition des texte dans la view
         nom_text.setText(fournisseur.getNom());
         email_text.setText(fournisseur.getEmail());
         telephone_text.setText(fournisseur.getTelephone());
 
+        //Open BDD
         MainActivity.BDD.open();
 
+        //Recuperation du lieu avec l'id
         Cursor cursor = MainActivity.BDD.select("lieu", "id == " + extras.getString("lieu"));
 
         ArrayList<String> arraySpinner = new ArrayList<>();
 
+        //lieu pour le spiner
         lieux.clear();
 
         if (cursor != null) {
@@ -56,6 +62,7 @@ public class ModifierFournisseur extends AjoutFournisseur {
             lieux.add(lieu);
         }
 
+        //Recuperation de tout les lieu
         cursor = MainActivity.BDD.select("lieu");
 
         if (cursor != null){
@@ -63,6 +70,7 @@ public class ModifierFournisseur extends AjoutFournisseur {
                 while (cursor.moveToNext()) {
                     Lieu lieu = cursotToLieu(cursor);
 
+                    //Ajout du lieu si cela n'ais pas celuis de basse
                     if (!String.valueOf(lieu.getId()).equals(extras.getString("lieu"))){
                         arraySpinner.add(lieu.getAdresse());
                         lieux.add(lieu);
@@ -71,11 +79,13 @@ public class ModifierFournisseur extends AjoutFournisseur {
             }
         }
 
+        //envoie au spiner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
         lieu.setAdapter(adapter);
     }
 
+    //Update du fournisseur
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void addFournisseur() {

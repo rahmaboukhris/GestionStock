@@ -17,6 +17,7 @@ public class BDD extends SQLiteOpenHelper {
     //création des tables dans la base de données
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //Ajout des diferente tables
         req = "create table lieu(id INTEGER PRIMARY KEY AUTOINCREMENT, ville text, rue text, numero int, codepost text)";
         db.execSQL(req);
 
@@ -43,6 +44,7 @@ public class BDD extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        //Suppression des tables dans l'ordre inverse
         req = "DROP TABLE seuil";
         db.execSQL(req);
 
