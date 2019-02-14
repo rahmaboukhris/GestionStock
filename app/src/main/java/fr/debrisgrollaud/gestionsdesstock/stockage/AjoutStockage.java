@@ -42,7 +42,7 @@ public class AjoutStockage extends AppCompatActivity {
         Button valider = findViewById(R.id.button_ajout_stockage);
 
         nom = findViewById(R.id.input_ajoutStockage_nom);
-        lieu = findViewById(R.id.input_ajoutFournisseur_lieu);
+        lieu = findViewById(R.id.spiner_ajoutStockage_lieu);
 
         valider.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

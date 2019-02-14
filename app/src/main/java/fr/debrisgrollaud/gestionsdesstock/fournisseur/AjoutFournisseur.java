@@ -48,7 +48,7 @@ public class AjoutFournisseur extends AppCompatActivity {
         nom = findViewById(R.id.input_ajoutFournisseur_nom);
         email = findViewById(R.id.input_ajoutFournisseur_e_mail);
         telephone = findViewById(R.id.input_ajoutFournisseur_telephone);
-        lieu = findViewById(R.id.input_ajoutFournisseur_lieu);
+        lieu = findViewById(R.id.spiner_ajoutFournisseur_lieu);
 
         // Action on clique
         valider.setOnClickListener(new View.OnClickListener() {

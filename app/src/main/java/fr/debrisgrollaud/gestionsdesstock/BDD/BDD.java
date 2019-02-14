@@ -32,12 +32,8 @@ public class BDD extends SQLiteOpenHelper {
         req = "create table categorie(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text)";
         db.execSQL(req);
 
-        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite text, reference text, categorie INTEGER, dateAjout datetime, fournisseur INTEGER," +
+        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite text, reference text, categorie INTEGER, dateAjout datetime, fournisseur INTEGER, alerte text, critique text," +
                 "FOREIGN KEY(categorie) REFERENCES categorie(id),FOREIGN KEY(fournisseur) REFERENCES fournisseur(id))";
-        db.execSQL(req);
-
-        req = "create table seuil(id_stokage INTEGER,id_item INTEGER, alerte text, critique text," +
-                "PRIMARY KEY (id_stokage, id_item))";
         db.execSQL(req);
 
     }
@@ -45,22 +41,22 @@ public class BDD extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //Suppression des tables dans l'ordre inverse
-        req = "DROP TABLE seuil";
+        req = "DROP TABLE IF EXISTS seuil";
         db.execSQL(req);
 
-        req = "DROP TABLE item";
+        req = "DROP TABLE IF EXISTS item";
         db.execSQL(req);
 
-        req = "DROP TABLE categorie";
+        req = "DROP TABLE IF EXISTS categorie";
         db.execSQL(req);
 
-        req = "DROP TABLE fournisseur";
+        req = "DROP TABLE IF EXISTS fournisseur";
         db.execSQL(req);
 
-        req = "DROP TABLE stockage";
+        req = "DROP TABLE IF EXISTS stockage";
         db.execSQL(req);
 
-        req = "DROP TABLE lieu";
+        req = "DROP TABLE IF EXISTS lieu";
         db.execSQL(req);
 
         this.onCreate(db);

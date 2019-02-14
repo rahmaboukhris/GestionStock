@@ -7,7 +7,7 @@
     tools:context=".item.AjoutItem">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_ajout_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -51,45 +51,83 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutItem_categorie"
+            android:id="@+id/input_ajoutItem_nombres"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Catégorie"
-                android:inputType="text" />
+                android:hint="Quantiter"
+                android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutItem_dateAjout"
+            android:id="@+id/input_ajoutItem_allerte"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Date d'ajout"
-                android:inputType="text" />
+                android:hint="Seuil d'Alerte"
+                android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_ajoutItem_fournisseur"
+            android:id="@+id/input_ajoutItem_critique"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Fournisseur"
-                android:inputType="text" />
+                android:hint="Seuil Critique"
+                android:inputType="number" />
 
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Categorie" />
+
+            <Spinner
+                android:id="@+id/spiner_ajoutItem_categorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fournisseur" />
+
+            <Spinner
+                android:id="@+id/spiner_ajoutItem_fournisseur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown" />
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
