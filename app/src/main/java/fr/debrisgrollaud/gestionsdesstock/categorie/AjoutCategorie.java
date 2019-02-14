@@ -1,8 +1,8 @@
 package fr.debrisgrollaud.gestionsdesstock.categorie;
 
-import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -15,7 +15,6 @@ import java.util.HashMap;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
 import fr.debrisgrollaud.gestionsdesstock.R;
 
-//ajout d'une catégorie
 public class AjoutCategorie extends AppCompatActivity {
 
     protected TextInputLayout nom;

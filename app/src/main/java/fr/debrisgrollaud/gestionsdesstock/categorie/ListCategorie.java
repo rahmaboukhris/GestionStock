@@ -2,6 +2,7 @@ package fr.debrisgrollaud.gestionsdesstock.categorie;
 
 import android.app.ListActivity;
 import android.database.Cursor;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +15,6 @@ import java.util.List;
 import fr.debrisgrollaud.gestionsdesstock.BDD.relation.Categorie;
 import fr.debrisgrollaud.gestionsdesstock.ListAdapter;
 import fr.debrisgrollaud.gestionsdesstock.MainActivity;
-import fr.debrisgrollaud.gestionsdesstock.R;
 
 public class ListCategorie extends ListActivity {
     private ArrayList<HashMap<String, Object>> list = new ArrayList<>();

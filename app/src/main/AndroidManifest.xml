@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".fournisseur.ModifierFournisseur"></activity>
+        <activity android:name=".categorie.AjoutCategorie"></activity>
+        <activity android:name=".categorie.ListCategorie" />
+        <activity android:name=".categorie.ModifierCategorie" />
+        <activity android:name=".fournisseur.ModifierFournisseur" />
         <activity android:name=".lieu.ModifierLieu" />
         <activity android:name=".item.ModifierItem" />
         <activity android:name=".stockage.ModifierStockage" />
