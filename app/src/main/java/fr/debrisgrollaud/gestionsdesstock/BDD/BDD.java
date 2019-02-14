@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 //Fichier de creation de la BDD
 public class BDD extends SQLiteOpenHelper {
 
+    private String req;
+
     //constructeur
     public BDD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -15,22 +17,50 @@ public class BDD extends SQLiteOpenHelper {
     //création des tables dans la base de données
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String req = "create table stockage(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu text, dateAjout datetime)";
-        db.execSQL(req);
-        req = "create table fournisseur(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu text, email text, telephone int)";
-        db.execSQL(req);
         req = "create table lieu(id INTEGER PRIMARY KEY AUTOINCREMENT, ville text, rue text, numero int, codepost text)";
         db.execSQL(req);
-        req = "create table seuil(alerte text, critique text)";
+
+        req = "create table stockage(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu INTEGER NOT NULL, dateAjout datetime, " +
+                "FOREIGN KEY(lieu) REFERENCES lieu(id))";
         db.execSQL(req);
-        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite int, reference text, categorie text, dateAjout datetime, fournisseur text)";
+
+        req = "create table fournisseur(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, lieu INTEGER NOT NULL, email text, telephone int," +
+                "FOREIGN KEY(lieu) REFERENCES lieu(id))";
         db.execSQL(req);
+
         req = "create table categorie(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text)";
         db.execSQL(req);
+
+        req = "create table item(id INTEGER PRIMARY KEY AUTOINCREMENT, nom text, quantite text, reference text, categorie INTEGER, dateAjout datetime, fournisseur text," +
+                "FOREIGN KEY(categorie) REFERENCES categorie(id))";
+        db.execSQL(req);
+
+        req = "create table seuil(id_stokage INTEGER,id_item INTEGER, alerte text, critique text," +
+                "PRIMARY KEY (id_stokage, id_item))";
+        db.execSQL(req);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // code de modification éventuelle de la structure de la base de données
+        req = "DROP TABLE seuil";
+        db.execSQL(req);
+
+        req = "DROP TABLE item";
+        db.execSQL(req);
+
+        req = "DROP TABLE categorie";
+        db.execSQL(req);
+
+        req = "DROP TABLE fournisseur";
+        db.execSQL(req);
+
+        req = "DROP TABLE stockage";
+        db.execSQL(req);
+
+        req = "DROP TABLE lieu";
+        db.execSQL(req);
+
+        this.onCreate(db);
     }
 }
