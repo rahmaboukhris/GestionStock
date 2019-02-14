@@ -73,7 +73,7 @@ public class AjoutCategorie extends AppCompatActivity {
 
         nom_text.setText("");
 
-        Toast.makeText(MainActivity.Instance, R.string.app_tost_list_ajouter,
+        Toast.makeText(MainActivity.Instance, R.string.app_tost_ajouter_categorie,
                 Toast.LENGTH_LONG).show();
     }
 

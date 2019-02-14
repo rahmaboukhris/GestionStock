@@ -21,6 +21,7 @@ import fr.debrisgrollaud.gestionsdesstock.lieu.ListLieu;
 import fr.debrisgrollaud.gestionsdesstock.precommande.ListPrecommande;
 import fr.debrisgrollaud.gestionsdesstock.stockage.AjoutStockage;
 import fr.debrisgrollaud.gestionsdesstock.stockage.ListStockage;
+import fr.debrisgrollaud.gestionsdesstock.stockage.ModifierStockage;
 
 public class MainActivity extends AppCompatActivity {
 

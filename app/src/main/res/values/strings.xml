@@ -18,6 +18,7 @@
     <string name="app_name_modifier_item">Modifier un item</string>
 
     <string name="app_tost_ajouter_list">Votre lieu a été ajouter !</string>
+    <string name="app_tost_ajouter_categorie">Votre lieu a été ajouter !</string>
     <string name="app_tost_ajouter_stockage">Votre stockage a été ajouter !</string>
     <string name="app_tost_ajouter_forunisseur">Votre fournisseur a été ajouter !</string>
 
