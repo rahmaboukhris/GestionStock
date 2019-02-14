@@ -46,12 +46,9 @@ public class MainActivity extends AppCompatActivity {
         final Button button_toListPrecommande = findViewById(R.id.toListPrecommande);
         final Button button_toAjoutStockage = findViewById(R.id.toAjoutStockage);
         final Button button_toListStockage = findViewById(R.id.toListStockage);
-<<<<<<< HEAD
         final Button button_toModifierStockage = findViewById(R.id.toModifierStockage);
         final Button button_toAjoutCategorie = findViewById(R.id.toAjoutCategorie);
         final Button button_toModifierCategorie = findViewById(R.id.toModifierCategorie);
-=======
->>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
 
         //Toutes les actions sont sur des clocks
         setActivityOnClick(button_toAjoutFournisseur, AjoutFournisseur.class);
@@ -63,12 +60,9 @@ public class MainActivity extends AppCompatActivity {
         setActivityOnClick(button_toListPrecommande, ListPrecommande.class);
         setActivityOnClick(button_toAjoutStockage, AjoutStockage.class);
         setActivityOnClick(button_toListStockage, ListStockage.class);
-<<<<<<< HEAD
         setActivityOnClick(button_toModifierStockage, ModifierStockage.class);
         setActivityOnClick(button_toAjoutCategorie, AjoutCategorie.class);
         setActivityOnClick(button_toModifierCategorie, ModifierCategorie.class);
-=======
->>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
 
     }
 

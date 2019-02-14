@@ -92,7 +92,6 @@
             android:text="Liste des stockages"
             tools:visibility="visible" />
 
-<<<<<<< HEAD
         <Button
             android:id="@+id/toModifierItem"
             android:layout_width="match_parent"
@@ -117,8 +116,6 @@
             android:text="Modifier une catégorie"
             android:visibility="visible" />
 
-=======
->>>>>>> 2db8f55b28775b5dd71c02e9241bb6f85c208343
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
