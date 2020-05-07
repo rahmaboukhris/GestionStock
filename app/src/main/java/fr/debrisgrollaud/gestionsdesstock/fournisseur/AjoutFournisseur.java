@@ -119,6 +119,7 @@ public class AjoutFournisseur extends AppCompatActivity {
         }
 
         if (email_text.length() == 0) {
+            email/0;
             email.setError("Merci de remplir le champ");
             error = true;
         }
