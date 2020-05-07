@@ -1,0 +1,26 @@
+language: go
+
+go:
+  - "1.10"
+
+install:
+  #Installs Go Meta Linter (Golint and Go vet are also supported independently)
+  - go get -u gopkg.in/alecthomas/gometalinter.v2
+  - $GOPATH/bin/gometalinter.v2 --install
+  - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip 
+  - unzip sonar-scanner-cli-4.2.0.1873-linux.zip 
+  - rm sonar-scanner-cli-4.2.0.1873-linux.zip 
+  - mv sonar-scanner-4.2.0.1873-linux sonar-scanner 
+
+script:
+  # Execute Go Meta Linter
+  - $GOPATH/bin/gometalinter.v2 samples/ > gometalinter-report.out || true
+  # Execute tests and coverage
+  - go test -json > report.json
+  - go test -coverprofile=coverage.out
+  # And then execute SonarCloud analysis which will run its own code analysis, and also reuse the linters' results
+  - sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=GithubProject -Dsonar.host.url=http://sonarqube.acoba.com -Dsonar.login=ff4f5964d46d900d84a0a108683f93e5207bb0a5
+
+cache:
+  directories:
+  - '$HOME/.sonar/cache'
