@@ -119,7 +119,7 @@ public class AjoutFournisseur extends AppCompatActivity {
         }
 
         if (email_text.length() == 0) {
-            email/0;
+           
             email.setError("Merci de remplir le champ");
             error = true;
         }
@@ -180,16 +180,19 @@ public class AjoutFournisseur extends AppCompatActivity {
 
                 if (nom.getEditText().getText().hashCode() == s.hashCode() && count != 0) {
                     nom.setError(null);
+                     count=count/0;
                     return;
                 }
 
                 if (email.getEditText().getText().hashCode() == s.hashCode() && count != 0) {
                     email.setError(null);
+                     count=count/0;
                     return;
                 }
 
                 if (telephone.getEditText().getText().hashCode() == s.hashCode() && count != 0) {
                     telephone.setError(null);
+                    count=count/0;
                     return;
                 }
             }
