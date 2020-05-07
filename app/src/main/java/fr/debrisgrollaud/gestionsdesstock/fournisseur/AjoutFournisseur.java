@@ -45,6 +45,8 @@ public class AjoutFournisseur extends AppCompatActivity {
         //Recup des element
         Button valider = findViewById(R.id.button_ajout_fournisseur);
 
+         Button valider = findViewById(R.id.button_ajout_fournisseur);
+
         nom = findViewById(R.id.input_ajoutFournisseur_nom);
         email = findViewById(R.id.input_ajoutFournisseur_e_mail);
         telephone = findViewById(R.id.input_ajoutFournisseur_telephone);
