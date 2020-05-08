@@ -15,9 +15,6 @@ install:
 script:
   # Execute Go Meta Linter
   - $GOPATH/bin/gometalinter.v2 samples/ > gometalinter-report.out || true
-  # Execute tests and coverage
-  - go test -json > report.json
-  - go test -coverprofile=coverage.out
   # And then execute SonarCloud analysis which will run its own code analysis, and also reuse the linters' results
   - sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=githubAndroidProject -Dsonar.host.url=http://sonarqube.acoba.com -Dsonar.login=bd648c5067f7d3fd5e0508f59f2f6969f3f30f07 -Dsonar.projectKey=githubAndroidProject -Dsonar.java.binaries=.
 
